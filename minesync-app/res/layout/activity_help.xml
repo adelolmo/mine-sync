@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_link_to_dbx"
+            android:id="@+id/label_help_question_one"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_link_to_dbx"
+            android:id="@+id/label_help_answer_one"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_what_dbx"
+            android:id="@+id/label_help_question_two"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_what_dbx"
+            android:id="@+id/label_help_answer_two"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_unlink_dbx"
+            android:id="@+id/label_help_question_three"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_unlink_dbx"
+            android:id="@+id/label_help_answer_three"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_dbx_status"
+            android:id="@+id/label_help_question_four"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_dbx_status"
+            android:id="@+id/label_help_answer_four"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_last_activity"
+            android:id="@+id/label_help_question_five"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_last_activity"
+            android:id="@+id/label_help_answer_five"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_notification"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_notification"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
+
+    </LinearLayout>
+</ScrollView>

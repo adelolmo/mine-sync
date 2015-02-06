@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1">
+
+    <ViewAnimator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewAnimator"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:layout_marginBottom="10px">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:measureWithLargestChild="false">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="horizontal"
+                              android:layout_marginTop="5dp"
+                              android:layout_marginLeft="5dp"
+                              android:layout_marginBottom="5dp"
+                              android:layout_marginRight="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_dropbox_status"
+                        android:id="@+id/label_dropbox_status"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textDropboxStatus"
+                        android:maxWidth="@dimen/activity_horizontal_margin"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </ViewAnimator>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_txt_link_to_dbx"
+        android:id="@+id/button_dropbox_link"
+        android:drawableLeft="@drawable/ic_dbx"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_txt_unlink_from_dbx"
+        android:id="@+id/button_dropbox_unlink"
+        android:layout_weight="0.04"/>
+
+</LinearLayout>

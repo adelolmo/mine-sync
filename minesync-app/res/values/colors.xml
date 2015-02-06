@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dropbox_blue">#1092fd</color>
+    <color name="green">#8cb141</color>
+
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_green_dark">#ff669900</color>
+
+</resources>

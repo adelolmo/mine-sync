@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/listWorldsEntry"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/activatable_background_minesync">
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        android:id="@+id/imageViewSyncType"
+        android:background="#ff4339ff"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="World name"
+            android:id="@+id/textViewWorldListWorldName"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="modification date"
+                android:id="@+id/textViewWorldListDate"
+                android:gravity="left"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Size"
+                android:id="@+id/textViewWorldListSize"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

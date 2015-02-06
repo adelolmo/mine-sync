@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:padding="5dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <ImageView
+        android:id="@+id/status_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/label_dropbox_status"
+        android:src="@drawable/ic_stat_service"/>
+
+    <RelativeLayout
+        android:id="@+id/notification_text"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/status_icon"
+        android:layout_alignParentLeft="false">
+
+        <TextView
+            android:id="@+id/txt_notification_sync_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="@string/label_notification_service_title"/>
+
+        <TextView
+            android:id="@+id/txt_notification_sync_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txt_notification_sync_title"
+            android:layout_below="@+id/txt_notification_sync_title"
+            android:textIsSelectable="true"/>
+    </RelativeLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:id="@+id/button_service_start"
+        android:src="@android:drawable/ic_media_play"
+        android:layout_alignParentLeft="false"
+        android:contentDescription="@string/button_ok"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:id="@+id/button_service_stop"
+        android:src="@android:drawable/ic_media_pause"
+        android:contentDescription="@string/button_ok"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

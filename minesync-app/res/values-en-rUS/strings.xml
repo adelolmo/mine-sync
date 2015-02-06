@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 17/11/2014 21:18 -->
+<resources>
+    <string name="date_time_format">MM/dd/yyyy HH:mm</string>
+    <string name="date_format">MM/dd/yyyy</string>
+
+    <!--Main activity-->
+
+    <!--Dropbox fragment-->
+
+    <!--History fragment-->
+
+    <!--Worlds fragment-->
+
+    <!--Config activity-->
+
+    <!--Help activity-->
+
+    <!--Toast-->
+
+    <!--Notification bar-->
+
+    <!--Configuration finished dialog-->
+
+    <!--Minecraft PE not installed dialog-->
+
+    <!--Sync Now dialog-->
+
+    <!--Dialog commons-->
+</resources>

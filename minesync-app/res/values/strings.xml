@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 17/11/2014 21:18 -->
+<resources>
+    <string name="app_name">Mine Sync</string>
+    <string name="icon_dropbox">Dropbox</string>
+    <string name="action_settings">Help</string>
+    <string name="action_faq">FAQ</string>
+    <string name="label_dropbox_status">Dropbox status:</string>
+    <string name="label_last_activity">Last activity:</string>
+    <string name="date_time_format">dd/MM/yyyy HH:mm</string>
+    <string name="date_format">dd/MM/yyyy</string>
+    <string name="time_format">HH:mm</string>
+
+    <!--Main activity-->
+    <string name="button_txt_link_to_dbx">Link to Dropbox</string>
+    <string name="button_txt_unlink_from_dbx">Unlink</string>
+    <string name="txt_last_activity">%1$s \"%2$s\" on %3$s %4$s</string>
+    <string name="txt_no_activity">No activity</string>
+    <string name="txt_activity_type_upload">save</string>
+    <string name="txt_activity_type_download">update</string>
+    <string name="txt_button_refresh_date">Refresh Date</string>
+    <string name="txt_link_status_linked_to">Linked to %s</string>
+    <string name="txt_link_status_not_linked">Not linked</string>
+    <string name="txt_dropbox_account_unknown">Unknown</string>
+
+    <!--Dropbox fragment-->
+    <string name="label_dropbox_fragment_title">Dropbox</string>
+
+    <!--History fragment-->
+    <string name="label_history_fragment_title">Activity</string>
+    <string name="label_history_header_world_name">World</string>
+    <string name="label_history_header_date">Date</string>
+    <string name="label_history_header_action">Action</string>
+    <string name="txt_date_today_time">Today at %s</string>
+    <string name="txt_date_yesterday_time">Yesterday at %s</string>
+
+    <!--Worlds fragment-->
+    <string name="label_worlds_fragment_title">Worlds</string>
+    <string name="label_action_sync_manual">Sync Manual</string>
+    <string name="label_action_sync_auto">Sync Auto</string>
+    <string name="label_action_upload">Upload</string>
+    <string name="label_action_download">Download</string>
+    <string name="toast_sync_auto_already">The World is already in auto sync</string>
+    <string name="toast_sync_manual_already">The World is already in manual sync</string>
+    <string name="toast_sync_auto_set">Set World to auto sync</string>
+    <string name="toast_sync_manual_set">Set World to manual sync</string>
+    <string name="toast_upload_world">Uploading world\u2026</string>
+    <string name="toast_upload_world_disable">World not found, download first</string>
+    <string name="toast_download_world">Downloading world\u2026</string>
+
+    <!--Config activity-->
+    <string name="txt_welcome_after_dbx_link">Your Dropbox account has been successfully linked.\n\nPlease select one of the two options to finish the configuration or press the \"back\" button from your device if you want to ignore this step.</string>
+    <string name="button_download_from_dbx">Get all from Dropbox</string>
+    <string name="button_upload_local_worlds">Save local Worlds</string>
+    <string name="txt_desc_button_download">This option replaces the worlds in your device with the content from your Dropbox account.</string>
+    <string name="txt_desc_button_upload">This option replaces the worlds in your Dropbox account with the content from your device.</string>
+    <string name="label_download">Downloading worlds\u2026</string>
+    <string name="label_upload">Uploading worlds\u2026</string>
+
+    <!--Help activity-->
+    <string name="label_help">Help</string>
+    <string name="label_help_q_link_to_dbx">What does \"Link to Dropbox\" mean?</string>
+    <string name="label_help_a_link_to_dbx">In order to keep your Minecraft worlds in the cloud, Mine Sync uses the service provided from Dropbox. This option will link the application to your Dropbox account.</string>
+    <string name="label_help_q_what_dbx">What is Dropbox?</string>
+    <string name="label_help_a_what_dbx">Dropbox is a file hosting service. It allows users to create a special folder on each of their computers, which Dropbox then synchronizes so that it appears to be the same folder (with the same contents) regardless of which computer is used to view it.</string>
+    <string name="label_help_q_unlink_dbx">What does \"Unlink\" mean?</string>
+    <string name="label_help_a_unlink_dbx">Unlink means that the connection between Mine Sync and your Dropbox account will be broken. This way the application won\'t be able to save your worlds in the cloud.</string>
+    <string name="label_help_q_dbx_status">Dropbox status</string>
+    <string name="label_help_a_dbx_status">It shows the current status of the connection to your Dropbox account. \"Not linked\" means that the application has not been yet connected to your Dropbox account. \"Linked to\" plus \"your name\" means that the application is linked to the given Dropbox account.</string>
+    <string name="label_help_q_last_activity">Last activity</string>
+    <string name="label_help_a_last_activity">It shows the application\'s last action. This could be either a world \"save\" or a world \"update\". World \"save\" means that a local world was uploaded to the cloud. World \"update\" means that the world was downloaded from the cloud because it was changed by another of your devices.</string>
+    <string name="label_help_q_notification">Notifications</string>
+    <string name="label_help_a_notification">Mine Sync creates a permanent entry in the notification bar. This notification has an icon that remains in colour if the sync service is running in the background keeping your worlds up-to-date.\nBy clicking the \"Pause\" button the sync service stops and your worlds won\'t get updated with new versions coming from your other devices. When the sync service is stopped the notification icon turns colourless. By clicking the \"Play\" button the sync service is activated again.\n\nAn extra notification will show every time that a world gets updated. This means that a world was modified in another device and the change was already taken in the current device.</string>
+
+    <!--Toast-->
+    <string name="toast_world_upload_ok">Minecraft successfully saved</string>
+    <string name="toast_world_upload_error">Minecraft could not be saved</string>
+    <string name="toast_world_download_ok">Minecraft %s updated</string>
+    <string name="toast_conflict_world">conflicted zip %s</string>
+    <string name="toast_sync_now_upload_ok">\"%s\" successfully uploaded</string>
+    <string name="toast_sync_now_upload_error">error uploading \"%s\"</string>
+    <string name="toast_sync_now_download_ok">\"%s\" successfully downloaded</string>
+    <string name="toast_sync_now_download_error">error downloading \"%s\"</string>
+    <string name="toast_json_update">Worlds got remotely updated, please refresh list</string>
+
+    <!--Notification bar-->
+    <string name="label_notification_sync_title">Minecraft World Update</string>
+    <string name="txt_notification_sync_text_downloaded">World \"%s\" was successfully updated</string>
+    <string name="label_notification_config_title">Mine Sync Configuration</string>
+    <string name="txt_notification_config_text_active">Configuration process active</string>
+    <string name="txt_notification_config_text_finished">Configuration process successfully finished</string>
+    <string name="label_notification_service_title">Mine Sync</string>
+    <string name="txt_notification_service_text_active">Sync of worlds active</string>
+    <string name="txt_notification_service_text_paused">Sync of worlds paused</string>
+    <string name="txt_notification_dropbox_connection_error">Impossible to connect to Dropbox</string>
+
+    <!--Configuration finished dialog-->
+    <string name="label_dialog_title_config_finished">Configuration finished</string>
+    <string name="label_dialog_content_config_finished">From now on \"Mine Sync\" will run in the background, keeping your Minecraft worlds always synced in your Dropbox account.</string>
+
+    <!--Minecraft PE not installed dialog-->
+    <string name="label_dialog_title_minecraft_not_found">Error</string>
+    <string name="label_dialog_content_minecraft_not_found">Minecraft PE not found.\nPlease install Minecraft PE to continue.</string>
+
+    <!--Sync Now dialog-->
+    <string name="label_dialog_title_sync_now">Sync Now</string>
+    <string name="label_dialog_sync_now_upload">Save</string>
+    <string name="label_dialog_sync_now_download">Get from Dropbox</string>
+
+    <!--Dialog commons-->
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_sync_now">Sync Now</string>
+</resources>

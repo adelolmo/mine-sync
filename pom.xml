@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.ado.github</groupId>
+    <artifactId>minesync</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    <name>Mine Sync - Parent</name>
+
+    <properties>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sdk.platform.version>19</sdk.platform.version>
+        <platform.version>5.0_r1</platform.version>
+        <android.plugin.version>4.0.0</android.plugin.version>
+        <android.sdk.path>/usr/local/android-sdk-linux</android.sdk.path>
+        <android.repository>${android.sdk.path}/extras/android/m2repository</android.repository>
+
+        <version.dropbox.sync>3.1.2</version.dropbox.sync>
+        <version.support-v4>21.0.3</version.support-v4>
+        <support-v4.lib.dir>${android.repository}/com/android/support/support-v4</support-v4.lib.dir>
+    </properties>
+
+    <modules>
+        <module>android-test-framework</module>
+        <module>minesync-app</module>
+        <module>minesync-instrumentation</module>
+        <module>minesync-translation-tool</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>android</groupId>
+                <artifactId>android</artifactId>
+                <version>${platform.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.android.support</groupId>
+                <artifactId>support-v4</artifactId>
+                <version>${version.support-v4}</version>
+                <type>aar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>17.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dropbox.sync</groupId>
+                <artifactId>android-sync-sdk</artifactId>
+                <version>${version.dropbox.sync}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.4</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>2.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.googlecode.json-simple</groupId>
+                <artifactId>json-simple</artifactId>
+                <version>1.1.1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>1.9.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>espresso</artifactId>
+                <version>1.1</version>
+                <classifier>bundled</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.simpligility.maven.plugins</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>${android.plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jarsigner-plugin</artifactId>
+                    <version>1.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <profile>
+            <!-- the standard profile runs the instrumentations tests -->
+            <id>standard</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>minesync-app</module>
+                <module>minesync-instrumentation</module>
+            </modules>
+        </profile>
+        <profile>
+            <!-- the release profile does sign, zipalign... but does not run instrumentation tests -->
+            <id>release</id>
+            <!-- via this activation the profile is automatically used when the release is done with the maven release
+            plugin -->
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <modules>
+                <module>minesync-app</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <repositories>
+        <repository>
+            <id>android-support</id>
+            <url>file://${env.ANDROID_HOME}/extras/android/m2repository</url>
+        </repository>
+    </repositories>
+
+    <scm>
+        <developerConnection>scm:git:ssh://github.com/adelolmo/mine-sync.git</developerConnection>
+    </scm>
+</project>

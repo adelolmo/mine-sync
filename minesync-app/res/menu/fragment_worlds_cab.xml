@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_upload"
+        android:icon="@drawable/ic_action_upload"
+        android:showAsAction="always"
+        android:title="@string/label_action_upload"/>
+    <item
+        android:id="@+id/action_download"
+        android:icon="@drawable/ic_action_download"
+        android:showAsAction="always"
+        android:title="@string/label_action_download"/>
+    <item
+        android:id="@+id/action_sync_manual"
+        android:icon="@drawable/ic_action_sync_manual"
+        android:showAsAction="always"
+        android:title="@string/label_action_sync_manual"/>
+    <item
+        android:id="@+id/action_sync_auto"
+        android:icon="@drawable/ic_action_sync_auto"
+        android:showAsAction="always"
+        android:title="@string/label_action_sync_auto"/>
+</menu>
