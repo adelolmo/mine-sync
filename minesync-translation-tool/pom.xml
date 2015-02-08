@@ -13,9 +13,9 @@
     <name>Mine Sync - Translation Tool</name>
 
     <properties>
-        <android.res.directory>${basedir}/mine-sync-app/res</android.res.directory>
+        <android.res.directory>${basedir}/../minesync-app/res</android.res.directory>
         <traslation.document.version>${project.parent.version}</traslation.document.version>
-        <maven-scm-plugin.basedir>${project.parent.basedir}/mine-sync-app/res</maven-scm-plugin.basedir>
+        <maven-scm-plugin.basedir>${project.parent.basedir}/minesync-app/res</maven-scm-plugin.basedir>
 
         <version.google.api>1.19.0</version.google.api>
         <version.google.client>1.17.0-rc</version.google.client>
