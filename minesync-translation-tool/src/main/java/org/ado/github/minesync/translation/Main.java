@@ -56,6 +56,8 @@ public class Main {
             version = version.replace("-SNAPSHOT", "");
         }
 
+        System.out.println(String.format("android res dir [%s], document version [%s]", exportDirectory.getAbsolutePath(), version));
+
         try {
             final InputStream translationFile = driveClient.getTranslationFile(version);
             exportFile.export(translationFile, exportDirectory);

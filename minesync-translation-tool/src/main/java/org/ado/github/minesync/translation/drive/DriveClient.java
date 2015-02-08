@@ -46,7 +46,7 @@ import java.util.List;
  */
 public class DriveClient {
 
-    private static final String FOLDER_NAME = "Mine Sync";
+    private static final String FOLDER_NAME = "Mine Sync GitHub";
     private static final String FILENAME_TEMPLATE = "Translations v.%s";
     private static final String MICROSOFT_OFFICE_2007_MIME_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
