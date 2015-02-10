@@ -176,8 +176,8 @@
     </repositories>
 
     <scm>
-        <url>scm:git:git@github.com:adelolmo/mine-sync.git</url>
-        <connection>scm:git:git@github.com:adelolmo/mine-sync.git</connection>
-        <developerConnection>scm:git:git@github.com:adelolmo/mine-sync.git</developerConnection>
+        <url>scm:git:ssh://adelolmo@github.com/mine-sync.git</url>
+        <connection>scm:git:ssh://adelolmo@github.com/mine-sync.git</connection>
+        <developerConnection>scm:git:ssh://adelolmo@github.com/mine-sync.git</developerConnection>
     </scm>
 </project>
