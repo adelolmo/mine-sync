@@ -67,6 +67,14 @@
     </dependencies>
 
     <build>
+        <extensions>
+            <!-- Enabling the use of sftp -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>1.0</version>
+            </extension>
+        </extensions>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
