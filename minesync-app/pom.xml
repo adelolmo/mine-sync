@@ -71,7 +71,13 @@
         <plugins>
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
-                <!--<version>2.4.2</version>-->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-gitexe</artifactId>
+                        <version>1.9.2</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <!--
                       During release:perform, enable the "release" profile
@@ -79,6 +85,7 @@
                     <preparationGoals>install</preparationGoals>
                     <releaseProfiles>release</releaseProfiles>
                     <!--<goals>deploy assembly:single</goals>-->
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
             <plugin>
