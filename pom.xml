@@ -148,6 +148,25 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.5.1</version>
                 </plugin>
+                <plugin>
+                    <groupId>de.jutzig</groupId>
+                    <artifactId>github-release-plugin</artifactId>
+                    <version>1.1.0</version>
+                    <executions>
+                        <execution>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>release</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <serverId>github</serverId>
+                        <description>Description of your release</description>
+                        <releaseName>Mine Sync ${project.version}</releaseName>
+                        <tag>mine-sync-${project.version}</tag>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>

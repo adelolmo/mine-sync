@@ -15,6 +15,10 @@
     <packaging>apk</packaging>
     <name>Mine Sync - App</name>
 
+    <properties>
+        <artifact.dist.name>${project.build.directory}/${artifactId}-${project.version}.apk</artifact.dist.name>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -209,6 +213,20 @@
 
     <profiles>
         <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.jutzig</groupId>
+                        <artifactId>github-release-plugin</artifactId>
+                        <configuration>
+                            <artifact>${artifact.dist.name}</artifact>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>install-dropbox</id>
             <activation>
                 <file>
@@ -292,4 +310,10 @@
             </build>
         </profile>
     </profiles>
+
+    <scm>
+        <url>https://github.com/mine-sync.git</url>
+        <connection>scm:git:ssh://adelolmo@github.com/mine-sync.git</connection>
+        <developerConnection>scm:git:ssh://adelolmo@github.com/mine-sync.git</developerConnection>
+    </scm>
 </project>

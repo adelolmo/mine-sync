@@ -4,3 +4,4 @@ Sync your Minecraft PE worlds between all your Android devices. Your worlds alwa
 Build requirements (tested):
 - Java 7
 - Maven 3.1.1
+- Android emulator running
