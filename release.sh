@@ -17,7 +17,7 @@ run(){
 	$MVN versions:set -DnewVersion="$DEVELOPMENT_VERSION-SNAPSHOT" &&
 	git commit -a -m "prepare to develop v.$DEVELOPMENT_VERSION-SNAPSHOT" &&
 	git push &&
-	find -name "*.versionsBackup"| xargs -I file rm file
+	find -name "*.versionsBackup"| xargs -I file rm file && find -name "*.releaseBackup"| xargs -I file rm file
 }
 
 if [[ -n "$RELEASE_VERSION" && -n "$DEVELOPMENT_VERSION" ]]; then
