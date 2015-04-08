@@ -72,7 +72,7 @@ public class MineSyncNotification {
         notification = new NotificationCompat.Builder(service.getApplicationContext())
                 .setTicker(getResourceText(R.string.label_notification_service_title))
                 .setContent(notificationTemplate)
-                .setSmallIcon(syncActive ? R.drawable.ic_stat_service : R.drawable.ic_stat_service_disable)
+                .setSmallIcon(android.R.color.transparent)
                 .setContentIntent(pendingIntent)
 //                .setPriority(Notification.PRIORITY_DEFAULT)
                 .setOngoing(true)
@@ -100,8 +100,8 @@ public class MineSyncNotification {
                                     getResourceText(R.string.txt_notification_service_text_active));
                     break;
                 case SYNC_ACTIVE:
-                    notification.icon = R.drawable.ic_stat_service;
-                    notificationTemplate.setImageViewResource(R.id.status_icon, R.drawable.ic_stat_service);
+//                    notification.icon = R.drawable.ic_stat_service;
+//                    notificationTemplate.setImageViewResource(R.id.status_icon, R.drawable.ic_stat_service);
                     notificationTemplate.setViewVisibility(R.id.button_service_start, View.INVISIBLE);
                     notificationTemplate.setViewVisibility(R.id.button_service_stop, View.VISIBLE);
                     notificationTemplate
@@ -109,8 +109,8 @@ public class MineSyncNotification {
                                     getResourceText(R.string.txt_notification_service_text_active));
                     break;
                 case SYNC_DISABLE:
-                    notification.icon = R.drawable.ic_stat_service_disable;
-                    notificationTemplate.setImageViewResource(R.id.status_icon, R.drawable.ic_stat_service_disable);
+//                    notification.icon = R.drawable.ic_stat_service_disable;
+//                    notificationTemplate.setImageViewResource(R.id.status_icon, R.drawable.ic_stat_service_disable);
                     notificationTemplate.setViewVisibility(R.id.button_service_start, View.VISIBLE);
                     notificationTemplate.setViewVisibility(R.id.button_service_stop, View.INVISIBLE);
                     notificationTemplate
