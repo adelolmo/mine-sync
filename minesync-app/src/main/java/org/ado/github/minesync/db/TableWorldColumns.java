@@ -28,7 +28,7 @@ package org.ado.github.minesync.db;
  * Column names and indexes for the database table <code>World</code>.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class TableWorldColumns extends GeneralTableColumns {
 

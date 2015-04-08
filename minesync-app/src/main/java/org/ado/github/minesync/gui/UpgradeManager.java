@@ -39,7 +39,7 @@ import static org.ado.github.minesync.config.AppConstants.MINECRAFT_SYNC_SHARE_P
  * Class for the management of app upgrades.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class UpgradeManager {
 

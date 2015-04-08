@@ -5,7 +5,7 @@ package android.content.pm;
  * to all of the information collected from AndroidManifest.xml.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class PackageInfo {
 

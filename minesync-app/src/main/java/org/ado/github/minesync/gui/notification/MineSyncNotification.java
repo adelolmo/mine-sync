@@ -46,7 +46,7 @@ import static org.apache.commons.lang.Validate.notNull;
  * Notification for the MineSync Service.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class MineSyncNotification {
 

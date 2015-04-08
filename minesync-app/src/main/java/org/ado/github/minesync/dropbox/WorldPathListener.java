@@ -34,7 +34,7 @@ import static org.ado.github.minesync.dropbox.DbxFilePendingStatus.getNewSyncSta
  * Dropbox path listener.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class WorldPathListener implements DbxFileSystem.PathListener {
 

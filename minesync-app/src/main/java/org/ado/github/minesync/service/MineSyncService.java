@@ -52,7 +52,7 @@ import static org.ado.github.minesync.config.AppConstants.*;
  * Main service. Manages the synchronization of worlds and watches for the foreground app.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class MineSyncService extends Service {
 

@@ -42,7 +42,7 @@ import static org.ado.github.minesync.db.WorldEntityFactory.getWorldEntity;
  * Manages the sync status of the local worlds.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class MineSyncWorldStatus {
 

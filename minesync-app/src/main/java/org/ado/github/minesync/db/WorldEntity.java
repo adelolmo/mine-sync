@@ -34,7 +34,7 @@ import static org.ado.github.minesync.minecraft.MinecraftUtils.getWorldName;
  * World entity in database.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class WorldEntity extends GeneralEntity implements Serializable {
 

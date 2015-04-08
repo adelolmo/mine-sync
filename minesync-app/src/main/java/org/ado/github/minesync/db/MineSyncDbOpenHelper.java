@@ -46,7 +46,7 @@ import static org.ado.github.minesync.db.TableWorldColumns.*;
  * Class to provide access to db.
  *
  * @author andoni
- * @since 1.1.0
+ * @since 1.0.0
  */
 public class MineSyncDbOpenHelper extends SQLiteOpenHelper {
 
