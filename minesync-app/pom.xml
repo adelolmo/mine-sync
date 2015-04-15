@@ -6,12 +6,12 @@
     <parent>
         <groupId>org.ado.github</groupId>
         <artifactId>minesync</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.2.3-SNAPSHOT</version>
     </parent>
 
     <groupId>org.ado.github.minesync</groupId>
     <artifactId>minesync-app</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.2.3-SNAPSHOT</version>
     <packaging>apk</packaging>
     <name>Mine Sync - App</name>
 
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.ado.github</groupId>
             <artifactId>android-test-framework</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.2.3-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -188,7 +188,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <groupId>de.jutzig</groupId>
                 <artifactId>github-release-plugin</artifactId>
                 <version>1.1.0</version>
@@ -207,7 +207,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
@@ -219,9 +219,22 @@
                     <plugin>
                         <groupId>de.jutzig</groupId>
                         <artifactId>github-release-plugin</artifactId>
-                        <configuration>
-                            <artifact>${artifact.dist.name}</artifact>
-                        </configuration>
+                        <version>1.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>github-upload</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>release</goal>
+                                </goals>
+                                <inherited>false</inherited>
+                                <configuration>
+                                    <releaseName>Mine Sync ${project.version}</releaseName>
+                                    <tag>v${project.version}</tag>
+                                    <artifact>${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk</artifact>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

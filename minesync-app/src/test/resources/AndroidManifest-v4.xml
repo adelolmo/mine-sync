@@ -24,7 +24,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="org.ado.github.minesync"
+          package="org.ado.minesync"
           android:versionCode="4"
           android:versionName="1.0.6"
           android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
@@ -57,19 +57,19 @@
         </activity>
         <activity android:name=".MinecraftConfigActivity">
             <intent-filter>
-                <action android:name="org.ado.github.minesync.gui.MineSyncConfigActivity"/>
+                <action android:name="org.ado.minesync.gui.MineSyncConfigActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity android:name=".HelpActivity">
             <intent-filter>
-                <action android:name="org.ado.github.minesync.gui.HelpActivity"/>
+                <action android:name="org.ado.minesync.gui.HelpActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity android:name=".SyncAvailablePopupActivity">
             <intent-filter>
-                <action android:name="org.ado.github.minesync.SyncAvailablePopup"/>
+                <action android:name="org.ado.minesync.SyncAvailablePopup"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -122,10 +122,10 @@
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.ado.github.minesync.FOREGROUND_APP"/>
-                <action android:name="org.ado.github.minesync.DROPBOX_ACCOUNT"/>
-                <action android:name="org.ado.github.minesync.UPLOAD_FAILED"/>
-                <action android:name="org.ado.github.minesync.UPLOAD_FINISHED"/>
+                <action android:name="org.ado.minesync.FOREGROUND_APP"/>
+                <action android:name="org.ado.minesync.DROPBOX_ACCOUNT"/>
+                <action android:name="org.ado.minesync.UPLOAD_FAILED"/>
+                <action android:name="org.ado.minesync.UPLOAD_FINISHED"/>
             </intent-filter>
         </receiver>
     </application>

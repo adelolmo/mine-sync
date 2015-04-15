@@ -5,11 +5,11 @@
     <parent>
         <groupId>org.ado.github</groupId>
         <artifactId>minesync</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.2.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>minesync-translation-tool</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.2.3-SNAPSHOT</version>
     <name>Mine Sync - Translation Tool</name>
 
     <properties>
@@ -84,7 +84,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <mainClass>org.ado.github.minesync.translation.Main</mainClass>
+                            <mainClass>org.ado.minesync.translation.Main</mainClass>
                             <arguments>
                                 <argument>${android.res.directory}</argument>
                                 <argument>${traslation.document.version}</argument>
