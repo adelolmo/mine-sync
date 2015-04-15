@@ -5,11 +5,11 @@
     <parent>
         <groupId>org.ado.github</groupId>
         <artifactId>minesync</artifactId>
-        <version>1.2.3-SNAPSHOT</version>
+        <version>1.2.3</version>
     </parent>
 
     <artifactId>minesync-instrumentation</artifactId>
-    <version>1.2.3-SNAPSHOT</version>
+    <version>1.2.3</version>
     <packaging>apk</packaging>
     <name>Mine Sync - Instrumentation</name>
 
@@ -22,14 +22,14 @@
         <dependency>
             <groupId>org.ado.github.minesync</groupId>
             <artifactId>minesync-app</artifactId>
-            <version>1.2.3-SNAPSHOT</version>
+            <version>1.2.3</version>
             <scope>provided</scope>
             <type>apk</type>
         </dependency>
         <dependency>
             <groupId>org.ado.github.minesync</groupId>
             <artifactId>minesync-app</artifactId>
-            <version>1.2.3-SNAPSHOT</version>
+            <version>1.2.3</version>
             <scope>provided</scope>
             <type>jar</type>
         </dependency>
