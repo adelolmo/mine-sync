@@ -16,7 +16,8 @@
     <name>Mine Sync - App</name>
 
     <properties>
-        <artifact.dist.name>${project.build.directory}/${project.artifactId}-${project.version}.apk</artifact.dist.name>
+        <!--<artifact.dist.name>${project.build.directory}/${project.artifactId}-${project.version}.apk</artifact.dist.name>-->
+        <artifact.dist.name>${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk</artifact.dist.name>
     </properties>
 
     <dependencies>
@@ -188,26 +189,6 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>
-                <groupId>de.jutzig</groupId>
-                <artifactId>github-release-plugin</artifactId>
-                <version>1.1.0</version>
-                <executions>
-                    <execution>
-                        <id>github-upload</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>release</goal>
-                        </goals>
-                        <inherited>false</inherited>
-                        <configuration>
-                            <releaseName>Mine Sync ${project.version}</releaseName>
-                            <tag>v${project.version}</tag>
-                            <artifact>${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk</artifact>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>-->
         </plugins>
     </build>
 
@@ -219,22 +200,9 @@
                     <plugin>
                         <groupId>de.jutzig</groupId>
                         <artifactId>github-release-plugin</artifactId>
-                        <version>1.1.0</version>
-                        <executions>
-                            <execution>
-                                <id>github-upload</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>release</goal>
-                                </goals>
-                                <inherited>false</inherited>
-                                <configuration>
-                                    <releaseName>Mine Sync ${project.version}</releaseName>
-                                    <tag>v${project.version}</tag>
-                                    <artifact>${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk</artifact>
-                                </configuration>
-                            </execution>
-                        </executions>
+                        <configuration>
+                            <artifact>${artifact.dist.name}</artifact>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
