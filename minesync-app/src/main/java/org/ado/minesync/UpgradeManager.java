@@ -22,12 +22,11 @@
  * SOFTWARE.
  */
 
-package org.ado.minesync.gui;
+package org.ado.minesync;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.util.Log;
 import org.ado.minesync.commons.ALog;
 import org.apache.commons.io.FileUtils;
 
@@ -58,12 +57,12 @@ public class UpgradeManager {
         try {
             int oldVersion = sharedPreferences.getInt("current.version", 3);
             int newVersion = context.getPackageManager().getPackageInfo("org.ado.minesync", 0).versionCode;
-            ALog.i(TAG, "old version [" + oldVersion + "] new version [" + newVersion + "]");
+            ALog.i(TAG, "old version [%s] new version [%s]", oldVersion, newVersion);
             upgrade(oldVersion, newVersion);
             setCurrentVersion(newVersion);
 
         } catch (PackageManager.NameNotFoundException e) {
-            Log.e(TAG, "Cannot upgrade app.", e);
+            ALog.e(TAG, e, "Cannot upgrade app.");
         }
     }
 
@@ -78,7 +77,7 @@ public class UpgradeManager {
                     }
                 }
             } catch (Exception e) {
-                Log.e(TAG, "Cannot upgrade from version 3 to version 4", e);
+                ALog.e(TAG, e, "Cannot upgrade from version 3 to version 4");
             }
         }
     }
@@ -86,6 +85,6 @@ public class UpgradeManager {
     private void setCurrentVersion(int newVersion) {
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putInt("current.version", newVersion);
-        edit.commit();
+        edit.apply();
     }
 }

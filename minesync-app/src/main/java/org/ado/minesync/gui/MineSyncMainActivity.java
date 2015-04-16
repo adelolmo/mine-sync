@@ -40,6 +40,7 @@ import android.view.MenuItem;
 import com.dropbox.sync.android.DbxAccountManager;
 import org.ado.minesync.ActivityTracker;
 import org.ado.minesync.R;
+import org.ado.minesync.UpgradeManager;
 import org.ado.minesync.commons.ALog;
 import org.ado.minesync.gui.fragment.AppSectionsPagerAdapter;
 import org.ado.minesync.service.MineSyncService;

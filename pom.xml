@@ -19,12 +19,11 @@
         <sdk.platform.version>19</sdk.platform.version>
         <platform.version>5.0_r1</platform.version>
         <android.plugin.version>4.0.0</android.plugin.version>
-        <android.sdk.path>/usr/local/android-sdk-linux</android.sdk.path>
-        <android.repository>${android.sdk.path}/extras/android/m2repository</android.repository>
 
         <version.dropbox.sync>3.1.2</version.dropbox.sync>
         <version.support-v4>21.0.3</version.support-v4>
-        <support-v4.lib.dir>${android.repository}/com/android/support/support-v4</support-v4.lib.dir>
+
+        <android.repository>${env.ANDROID_HOME}/extras/android/m2repository</android.repository>
     </properties>
 
     <modules>
@@ -151,7 +150,7 @@
                 <plugin>
                     <groupId>de.jutzig</groupId>
                     <artifactId>github-release-plugin</artifactId>
-                    <version>1.1.0</version>
+                    <version>1.1.1</version>
                     <executions>
                         <execution>
                             <phase>install</phase>
@@ -203,7 +202,7 @@
     <repositories>
         <repository>
             <id>android-support</id>
-            <url>file://${env.ANDROID_HOME}/extras/android/m2repository</url>
+            <url>file://${android.repository}</url>
         </repository>
     </repositories>
 

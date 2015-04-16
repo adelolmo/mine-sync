@@ -25,7 +25,7 @@
 package org.ado.minesync.github;
 
 import org.ado.atf.AndroidTestFramework;
-import org.ado.minesync.gui.UpgradeManager;
+import org.ado.minesync.UpgradeManager;
 import org.junit.Before;
 import org.junit.Test;
 

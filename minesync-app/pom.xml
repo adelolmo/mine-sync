@@ -16,7 +16,6 @@
     <name>Mine Sync - App</name>
 
     <properties>
-        <!--<artifact.dist.name>${project.build.directory}/${project.artifactId}-${project.version}.apk</artifact.dist.name>-->
         <artifact.dist.name>${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk</artifact.dist.name>
     </properties>
 

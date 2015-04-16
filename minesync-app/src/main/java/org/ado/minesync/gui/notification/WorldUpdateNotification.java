@@ -68,7 +68,7 @@ public class WorldUpdateNotification {
         Notification notification = new NotificationCompat.Builder(context)
                 .setContentTitle(getResourceText(context, R.string.label_notification_sync_title))
                 .setContentText(getResourceText(context, R.string.txt_notification_sync_text_downloaded, worldName))
-                .setSmallIcon(R.drawable.ic_stat_notify_sync)
+                .setSmallIcon(android.R.drawable.ic_popup_sync)
                 .setContentIntent(getPendingIntent())
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true)
