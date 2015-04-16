@@ -11,6 +11,22 @@
     <packaging>pom</packaging>
     <name>Mine Sync - Parent</name>
 
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>adelolmo</id>
+            <name>Andoni del Olmo</name>
+            <email>adelolmo@gmail.com</email>
+            <url>https://github.com/adelolmo</url>
+        </developer>
+    </developers>
+
     <properties>
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
