@@ -15,9 +15,11 @@ This can also be helpful when you get a new Android device. In this case, just b
 You need a Dropbox account to get this application working.
 
 ## Build
-Build requirements (tested):
-- Java 7
-- Maven 3.1.1
-- Android emulator running
+# Requirements (tested):
 
+* Java 7
+* Maven 3.1.1
+* Android emulator running
+
+# Compile
 	$ mvn clean install
