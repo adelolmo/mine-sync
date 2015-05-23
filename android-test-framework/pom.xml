@@ -7,11 +7,11 @@
     <parent>
         <groupId>org.ado.github</groupId>
         <artifactId>minesync</artifactId>
-        <version>1.2.4</version>
+        <version>1.2.4-SNAPSHOT</version>
     </parent>
 
     <artifactId>android-test-framework</artifactId>
-    <version>1.2.4</version>
+    <version>1.2.4-SNAPSHOT</version>
     <name>Android Test Framework</name>
 
     <dependencies>
