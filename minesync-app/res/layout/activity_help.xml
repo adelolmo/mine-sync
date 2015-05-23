@@ -76,22 +76,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_help_q_last_activity"
-            android:id="@+id/label_help_question_five"
-            android:layout_gravity="center_horizontal|left"
-            style="@style/label_help_question"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_help_a_last_activity"
-            android:id="@+id/label_help_answer_five"
-            android:layout_gravity="center_horizontal|left"
-            style="@style/label_help_answer"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/label_help_q_notification"
             android:layout_gravity="center_horizontal|left"
             style="@style/label_help_question"/>
@@ -103,5 +87,32 @@
             android:layout_gravity="center_horizontal|left"
             style="@style/label_help_answer"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_activity"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_activity"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_q_worlds"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_question"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_help_a_worlds"
+            android:layout_gravity="center_horizontal|left"
+            style="@style/label_help_answer"/>
     </LinearLayout>
 </ScrollView>

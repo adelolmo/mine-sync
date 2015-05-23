@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 17/11/2014 21:18 -->
+<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 23/05/2015 12:20 -->
 <resources>
     <string name="app_name">Mine Sync</string>
     <string name="icon_dropbox">Dropbox</string>
@@ -70,7 +70,11 @@
     <string name="label_help_q_last_activity">Last activity</string>
     <string name="label_help_a_last_activity">It shows the application\'s last action. This could be either a world \"save\" or a world \"update\". World \"save\" means that a local world was uploaded to the cloud. World \"update\" means that the world was downloaded from the cloud because it was changed by another of your devices.</string>
     <string name="label_help_q_notification">Notifications</string>
-    <string name="label_help_a_notification">Mine Sync creates a permanent entry in the notification bar. This notification has an icon that remains in colour if the sync service is running in the background keeping your worlds up-to-date.\nBy clicking the \"Pause\" button the sync service stops and your worlds won\'t get updated with new versions coming from your other devices. When the sync service is stopped the notification icon turns colourless. By clicking the \"Play\" button the sync service is activated again.\n\nAn extra notification will show every time that a world gets updated. This means that a world was modified in another device and the change was already taken in the current device.</string>
+    <string name="label_help_a_notification">Mine Sync creates a permanent entry in the notification drawer. This notification has an icon that remains in colour if the sync service is running in the background keeping your worlds up-to-date.\nBy clicking the \"Pause\" button the sync service stops and your worlds won\'t get updated with new versions coming from your other devices. When the sync service is stopped the notification icon turns colourless. By clicking the \"Play\" button the sync service is activated again.\n\nAn extra notification will show every time that a world gets updated. This means that a world was modified in other device and the change was already taken in the current device and you can already play it.</string>
+    <string name="label_help_q_activity">Activity</string>
+    <string name="label_help_a_activity">In the \"Activity\" section you can see what changes your worlds have been through.\nWorlds marked in green were updated in the device. Under the world\'s name you can see when the process took place and the world\'s size when it happend.\nWorlds marked in blue were saved to Dropbox. Under the world\'s name you can see when the process took place and the world\'s size when it happend.</string>
+    <string name="label_help_q_worlds">Worlds</string>
+    <string name="label_help_a_worlds">In the \"Worlds\" section you can see what Minecraft Worlds exist in the device.\nUnder the world\'s name you can see when Mine Sync saw the world for first time and in the right side you can see what\'s the world\'s current size.\nWorlds marked in blue are automatically sync with the cloud, while worlds marked in gray are not.\n\nYou can modify the sync status by selecting a world and pressing the button in the top right side of the screen (a white cloud with an inner spinning arrow).\n\nSelecting a world and pressing to the white cloud with an upwards green arrow will save the world to the cloud, while pressing the white cloud with a downwards blue arrow will download it.</string>
 
     <!--Toast-->
     <string name="toast_world_upload_ok">Minecraft successfully saved</string>

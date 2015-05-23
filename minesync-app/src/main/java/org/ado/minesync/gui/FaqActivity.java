@@ -36,7 +36,7 @@ import java.net.URL;
 import java.util.Locale;
 
 /**
- * Class description here.
+ * Activity to show the FAQ directly from the web.
  *
  * @author andoni
  * @since 17.11.2014
@@ -84,8 +84,9 @@ public class FaqActivity extends FragmentActivity {
 
         @Override
         protected Boolean doInBackground(String... params) {
+            final String url = params[0];
             try {
-                new URL(params[0]).openConnection().getContent();
+                new URL(url).openConnection().getContent();
                 return true;
             } catch (IOException e) {
                 return false;

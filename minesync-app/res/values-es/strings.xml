@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 17/11/2014 21:18 -->
+<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 23/05/2015 12:20 -->
 <resources>
     <string name="action_settings">Ayuda</string>
     <string name="action_faq">Preguntas frecuentes</string>
@@ -65,6 +65,12 @@
     <string name="label_help_a_dbx_status">Muestra el estado actual de la conexi\u00F3n a tu cuenta en Dropbox. \"No conectado\" significa que la aplicaci\u00F3n no ha sido conectada a tu cuenta en Dropbox. \"Conectado a\" y \"tu nombre\" significa que la aplicaci\u00F3n est\u00E1 conectada a esa cuenta en Dropbox.</string>
     <string name="label_help_q_last_activity">\u00DAltima actividad</string>
     <string name="label_help_a_last_activity">Muestra la \u00FAltima acci\u00F3n que la applicati\u00F3n ha realizado. Hay dos posibilidades: \"guardado\" y \"actualizado\". \"guardado\" significa que el Mundo se ha subido a la \"nube\". \"actualizado\" significa que el Mundo ha sido reemplazado por una versi\u00F3n m\u00E1s reciente que existe en la \"nube\", creada desde uno de tus dispositivos.</string>
+    <string name="label_help_q_notification">Notificaciones</string>
+    <string name="label_help_a_notification">Mine Sync a\u00F1ade una entrada permanente en la barra de notificaciones. La entrada contiene una imagen que permanece en color si el servicion de sincronizaci\u00F3n est\u00E1 activo en segundo plano para mantener tus mundos actualizados.\nPulsando el bot\u00F3n de \"Pausa\" el servido se detendr\u00E1 y tus mundos no se actualizar\u00E1n con nuevas versiones desde otros dispositivos. Cuando el servicio de sincronizaci\u00F3n se detiene el bot\u00F3n pierde el color. Pulsando el bot\u00F3n \"Play\" el servicio se resumir\u00E1.\n\nUna notificaci\u00F3n extra aparecer\u00E1 cada vez que un mundo se actualiza. Esto significa que un mundo fu\u00E9 modificado en otro dispositivo, que la actualizaci\u00F3n ya finaliz\u00F3 y que ya puedes jugar en \u00E9l.</string>
+    <string name="label_help_q_activity">Actividad</string>
+    <string name="label_help_a_activity">En la secci\u00F3n \"Actividad\" se pueden ver los cambios en tus mundos.\nLos mundos marcados en verde han sido actualizados en el dispositivo. Debajo del nombre del mundo se puede ver cu\u00E1ndo finaliz\u00F3 el proceso y cu\u00E1l era el tama\u00F1o del mundo en ese momento.\nLos mundos marcados en azul han sido salvados en Dropbox. Debajo del nombre del mundo se puede ver cu\u00E1ndo finaliz\u00F3 el proceso y cu\u00E1l era el tama\u00F1o del mundo en ese momento.</string>
+    <string name="label_help_q_worlds">Mundos</string>
+    <string name="label_help_a_worlds">En la seccion \"Mundos\" se pueden ver los mundos de Minecraft que existen en el dispositivo.\nDebajo del nombre del mundo se puede ver cu\u00E1ndo Mine Sync observ\u00F3 en mundo por primera vez y al lado derecho se puede ver cu\u00E1l es el tama\u00F1o actual del mundo.\nLos mundos marcados en azul son automaticamente sincronozados en la nube, mientras que los mundos marcados en gris no.\n\nSe puede cambiar el modo de sincronizaci\u00F3n seleccionando un mundo y pulsando el bot\u00F3n en la parte de arriba a al derecha (una nube blanca con unas flechas girando).\n\nSeleccionando un mundo y pulsando sobre la nube blanca con una flecha indicando hacia arriba har\u00E1 que el mundo se guarde en la nube, mientras que si se pulsa en la nube blanca con una flecha descendente el mundo se descargar\u00E1 desde la nube hasta el dispositivo.</string>
 
     <!--Toast-->
     <string name="toast_world_upload_ok">Minecraft guardado con \u00E9xito</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 17/11/2014 21:18 -->
+<!-- DO NOT EDIT MANUALLY. Content will get override by the Translation document. Exported on 23/05/2015 12:20 -->
 <resources>
     <string name="action_settings">Hilfe</string>
     <string name="action_faq">H\u00E4ufige Fragen</string>
@@ -41,6 +41,7 @@
     <string name="toast_sync_auto_set">Setze Welt auf automatische Sychronisation</string>
     <string name="toast_sync_manual_set">Setze Welt auf manuelle Sychronisation</string>
     <string name="toast_upload_world">Welt wird in Dropbox gespeichert\u2026</string>
+    <string name="toast_upload_world_disable">Welt nicht gefunden, bitte zuerst herunterladen</string>
     <string name="toast_download_world">Welt wird heruntergeladen\u2026</string>
 
     <!--Config activity-->
@@ -64,6 +65,12 @@
     <string name="label_help_a_dbx_status">Zeigt dir den momentanen Verbindungs-Status mit deinem Dropbox-Account an. \u201ENicht verbunden\u201C bedeutet, dass sich Mine Sync noch nicht mit deinem Account verbunden hat. \u201EVerbunden mit [Namen deines Accounts]\u201C bedeutet, dass eine Verbindung zu Dropbox besteht.</string>
     <string name="label_help_q_last_activity">Letzte Aktivit\u00E4t</string>
     <string name="label_help_a_last_activity">Zeigt dir die letzte Aktivi\u00E4t der Application an. Die Meldung kann entweder \u201Ewurde in Dropbox gespeichert\u201C oder \u201Ewurde von Dropbox heruntergeladen\u201C sein. Wenn \u201Ewurde in Dropbox gespeichert\u201C erscheint, bedeutet dies, dass deine Dateien von deinem Smartphone oder Tablet in die Cloud hochgeladen wurden.\n\u201EWurde von Dropbox heruntergeladen\u201C erscheint, wenn du zwischenzeitlich auf einem anderen Device gespielt hast. Mine Sync aktualisiert dann automatisch die Dateien auf deinem aktuellen Smartphone\/ Tablet, indem es die neueren Dateien aus der Cloud herunterl\u00E4dt.</string>
+    <string name="label_help_q_notification">Anzeige</string>
+    <string name="label_help_a_notification">Mine Sync wird dauerhaft in deiner Android-Benachrichtigungsleiste angezeigt. Die Farbe des Icons zeigt an, ob der automatische Synchronisationsservice im Hintergrund aktiv ist oder nicht.\nWenn du den \u201EPause\u201C-Knopf dr\u00FCckst, stoppt dieser Service. Dein Ger\u00E4t empf\u00E4ngt oder sendet dann keine Dateien mehr aus der bzw. in die Cloud, die Synchronisation mit anderen Ger\u00E4ten ist damit gestoppt. Das Icon wird dann in grauer Farbe angezeigt. Mit der \u201EPlay\u201C-Schaltfl\u00E4che wird der Service wieder aktiviert.\n\nZus\u00E4tzlich erscheint eine Benachrichtigung, wenn eine Welt auf einem anderen Ger\u00E4t ver\u00E4ndert und diese Version auf dem jetzt verwendeten Ger\u00E4t aktualisiert wurde (und du damit weiterspielen kannst).\n</string>
+    <string name="label_help_q_activity">Aktivit\u00E4t</string>
+    <string name="label_help_a_activity">Unter \u201CAktivit\u00E4t\u201D kannst du den \u00C4nderungs- und Speicherverlauf der Welt-Dateien nachvollziehen.\nDateien, die links mit einem gr\u00FCnen Balken gekennzeichnet sind, wurden auf das Ger\u00E4t heruntergeladen.\nDateien mit einem blauen Balken wurden in Dropbox gespeichert\/ hochgeladen. Jeweils unter dem Dateinamen sind das \u00C4nderungsdatum und die Gr\u00F6\u00DFe der Datei zum \u00C4nderungszeitpunkt angegeben.</string>
+    <string name="label_help_q_worlds">Welten</string>
+    <string name="label_help_a_worlds">Unter \u201CWelten\u201D kannst du sehen, welche in Minecraft kreierten Welten auf deinem Ger\u00E4t gespeichert sind.\nUnterhalb des Namens deiner Welt ist das Erstelldatum der Datei in Mine Sync angegeben, rechts daneben die momentane Gr\u00F6\u00DFe.\nEin blauer Balken links neben dem Dateinamen bedeutet, dass diese Welt automatisch von Mine Sync synchronisiert wird. Erscheint der Balken grau, ist die automatische Synchronisation ausgeschaltet.\n\nDas Ein- und Ausschalten der automatischen Synchronisation erfolgt \u00FCber den Cloud-Button ganz rechts. W\u00E4hle daf\u00FCr die betreffende Welt-Datei aus und klicke auf das Wolkensymbol mit dem roten kreisf\u00F6rmigen Pfeil oben rechts in der Ecke.\n\nF\u00FCr ein Upload in die Cloud (Speichern der Welt in Dropbox) w\u00E4hle die betreffende Datei aus und dr\u00FCcke auf das Wolkensymbol mit dem gr\u00FCnen Pfeil nach oben. Um die Datei aus der Cloud auf das Ger\u00E4t herunterzuladen, dr\u00FCcke auf das Wolkensymbol mit dem blauen Pfeil nach unten.\n\n</string>
 
     <!--Toast-->
     <string name="toast_world_upload_ok">Minecraft erfolgreich gespeichert</string>
