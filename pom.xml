@@ -6,7 +6,7 @@
 
     <groupId>org.ado.github</groupId>
     <artifactId>minesync</artifactId>
-    <version>1.2.5-SNAPSHOT</version>
+    <version>1.3.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
     <name>Mine Sync - Parent</name>
