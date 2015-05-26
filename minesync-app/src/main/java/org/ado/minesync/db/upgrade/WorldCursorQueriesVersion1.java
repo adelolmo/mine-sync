@@ -24,6 +24,7 @@
 
 package org.ado.minesync.db.upgrade;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import org.ado.minesync.commons.ALog;
 
@@ -31,40 +32,34 @@ import static org.ado.minesync.db.GeneralTableColumns.KEY_ID;
 import static org.ado.minesync.db.TableWorldColumns.*;
 
 /**
- * Manages the upgrade of the database.
+ * Database cursor queries for world table.
  *
  * @author andoni
  * @since 1.2.0
  */
-public class DatabaseUpgradeManager {
+public class WorldCursorQueriesVersion1 {
 
-    public static final String CREATE_WORLD_TABLE = "create table " + WORLD_TABLE
-            + " (" + KEY_ID + " integer primary key autoincrement, "
-            + WORLD_NAME_COLUMN + " text UNIQUE not null, "
-            + WORLD_MODIFICATION_DATE_COLUMN + " timestamp not null, "
-            + WORLD_SIZE_COLUMN + " long, "
-            + WORLD_SYNC_TYPE_COLUMN + " int);";
-    private static final String TAG = DatabaseUpgradeManager.class.getName();
-    private DatabaseVersion[] databaseVersionArray;
-    private DatabaseVersion databaseVersion1To2;
+    private static final String TAG = WorldCursorQueriesVersion1.class.getName();
 
-    public DatabaseUpgradeManager() {
-        databaseVersion1To2 = new Upgrade1To2();
-        databaseVersionArray = new DatabaseVersion[]{databaseVersion1To2};
+    private SQLiteDatabase database;
+
+    public WorldCursorQueriesVersion1(SQLiteDatabase readableDatabase) {
+        database = readableDatabase;
     }
 
-    public void create(SQLiteDatabase db) {
-        ALog.d(TAG, "onCreate. database [%s].", db.getPath());
-        db.execSQL(CREATE_WORLD_TABLE);
-        for (DatabaseVersion databaseVersion : databaseVersionArray) {
-            databaseVersion.create(db);
-        }
-    }
-
-    public void upgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        ALog.d(TAG, "onUpgrade. oldVersion [%d] newVersion [%d].", oldVersion, newVersion);
-        if (oldVersion == 1 && newVersion == 2) {
-            databaseVersion1To2.upgrade(db);
-        }
+    public Cursor getWorldCursorAll() {
+        String[] resultColumns = new String[]{KEY_ID,
+                WORLD_NAME_COLUMN,
+                WORLD_MODIFICATION_DATE_COLUMN,
+                WORLD_SIZE_COLUMN};
+        ALog.d(TAG, "get worlds all. database path [%s] version [%d].", database.getPath(), database.getVersion());
+        return database
+                .query(WORLD_TABLE,
+                        resultColumns,
+                        null,
+                        null,
+                        null,
+                        null,
+                        WORLD_NAME_COLUMN.concat(" asc"));
     }
 }

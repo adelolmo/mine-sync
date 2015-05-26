@@ -28,7 +28,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import org.ado.minesync.commons.ALog;
-import org.ado.minesync.db.WorldCursorQueries;
 import org.ado.minesync.db.WorldEntity;
 
 import java.util.List;
@@ -74,7 +73,7 @@ public class Upgrade1To2 implements DatabaseVersion {
     }
 
     private Cursor getCurrentWorlds(SQLiteDatabase database) {
-        WorldCursorQueries worldCursorQueries = new WorldCursorQueries(database);
+        WorldCursorQueriesVersion1 worldCursorQueries = new WorldCursorQueriesVersion1(database);
         return worldCursorQueries.getWorldCursorAll();
     }
 

@@ -53,7 +53,7 @@ public class WorldCursorQueries {
                 WORLD_MODIFICATION_DATE_COLUMN,
                 WORLD_SIZE_COLUMN,
                 WORLD_SYNC_TYPE_COLUMN};
-        ALog.d(TAG, "get worlds all. database path [" + database.getPath() + "] version [" + database.getVersion() + "].");
+        ALog.d(TAG, "get worlds all. database path [%s] version [%d].", database.getPath(), database.getVersion());
         return database
                 .query(WORLD_TABLE,
                         resultColumns,
