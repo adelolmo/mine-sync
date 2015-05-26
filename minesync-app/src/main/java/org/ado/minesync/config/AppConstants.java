@@ -26,7 +26,7 @@ package org.ado.minesync.config;
 
 public class AppConstants {
 
-    public static final boolean L = false;
+    public static final boolean L = true;
 
     public static final String MINECRAFT_SYNC_SHARE_PREFERENCES_NAME = "MinecraftSync";
     public static final String SHARE_PREFERENCES_LAST_SYNC_DATE = "lastSync";

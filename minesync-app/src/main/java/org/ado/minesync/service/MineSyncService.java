@@ -112,7 +112,7 @@ public class MineSyncService extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
-        ALog.i(TAG, "onTaskRemoved - rootIntent[" + rootIntent + "].");
+        ALog.i(TAG, "onTaskRemoved - rootIntent [%s].", rootIntent);
         // this should only be notified for KitKat - workaround!
         if (isKitKat()) {
             mineSyncNotification.updateSyncState(SyncStateEnum.SYNC_DISABLE);

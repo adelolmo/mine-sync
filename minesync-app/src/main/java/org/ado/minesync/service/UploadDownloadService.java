@@ -151,7 +151,7 @@ public class UploadDownloadService extends IntentService {
     private void startProcess(OperationTypeEnum operationType, String worldName, SyncTypeEnum syncType) throws MineSyncException, DropboxAccountException {
         switch (operationType) {
             case DOWNLOAD:
-                mineSyncNotification.buildNotification(false, false);
+                mineSyncNotification.buildNotification(false);
                 mineSyncNotification.updateSyncState(MineSyncService.SyncStateEnum.UPLOADING_DONWLOADING);
                 minecraftWorldManager.downloadWorld(worldName, syncType, getMinecraftWorldListener(worldName));
                 break;
@@ -160,7 +160,7 @@ public class UploadDownloadService extends IntentService {
                 minecraftWorldManager.downloadAll(getMinecraftWorldAllListener(operationType));
                 break;
             case UPLOAD:
-                mineSyncNotification.buildNotification(false, false);
+                mineSyncNotification.buildNotification(false);
                 mineSyncNotification.updateSyncState(MineSyncService.SyncStateEnum.UPLOADING_DONWLOADING);
                 minecraftWorldManager.uploadWorld(worldName, syncType, getMinecraftWorldListener(worldName));
                 break;

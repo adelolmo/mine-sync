@@ -64,31 +64,17 @@ public class MineSyncNotification {
     }
 
     public void buildNotification(boolean syncActive) {
-        buildNotification(syncActive, true);
-    }
-
-    public void buildNotification(boolean syncActive, boolean startForeground) {
         notificationTemplate = new RemoteViews(service.getPackageName(), R.layout.layout_notification);
-        PendingIntent pendingIntent = getMainPendingIntent();
-        notification = new NotificationCompat.Builder(service.getApplicationContext())
-                .setTicker(getResourceText(R.string.label_notification_service_title))
-                .setContent(notificationTemplate)
-                .setSmallIcon(android.R.color.transparent)
-                .setContentIntent(pendingIntent)
-                .setPriority(NotificationCompat.PRIORITY_MIN)
-                .setOngoing(true)
-                .setAutoCancel(false)
-                .setColor(getColor(R.color.dropbox_blue))
-                .build();
-        notification.flags |= Notification.FLAG_NO_CLEAR;
+        initializeNotification(getMainPendingIntent());
         initActions(syncActive);
-/*        if (startForeground) {
-            service.startForeground(NOTIFICATION_SYNC, notification);
-        }*/
     }
 
     public void updateSyncState(MineSyncService.SyncStateEnum state) {
-        ALog.d(TAG, "updateSyncState - state [" + state + "].");
+        ALog.d(TAG, "updateSyncState - state [%s].", state);
+        if (notification == null) {
+            ALog.w(TAG, "Notification is null. Initializing now...");
+            initializeNotification(getMainPendingIntent());
+        }
         if (notificationTemplate != null) {
             switch (state) {
                 case UPLOADING_DONWLOADING:
@@ -101,7 +87,6 @@ public class MineSyncNotification {
                                     getResourceText(R.string.txt_notification_service_text_active));
                     break;
                 case SYNC_ACTIVE:
-//                    notification.icon = R.drawable.ic_stat_service;
                     notificationTemplate.setImageViewResource(R.id.status_icon, R.drawable.ic_stat_service);
                     notificationTemplate.setViewVisibility(R.id.button_service_start, View.INVISIBLE);
                     notificationTemplate.setViewVisibility(R.id.button_service_stop, View.VISIBLE);
@@ -110,7 +95,6 @@ public class MineSyncNotification {
                                     getResourceText(R.string.txt_notification_service_text_active));
                     break;
                 case SYNC_DISABLE:
-//                    notification.icon = R.drawable.ic_stat_service_disable;
                     notificationTemplate.setImageViewResource(R.id.status_icon, R.drawable.ic_stat_service_disable);
                     notificationTemplate.setViewVisibility(R.id.button_service_start, View.VISIBLE);
                     notificationTemplate.setViewVisibility(R.id.button_service_stop, View.INVISIBLE);
@@ -144,6 +128,20 @@ public class MineSyncNotification {
         setState(syncActive);
         notificationTemplate.setOnClickPendingIntent(R.id.button_service_start, getSyncAction(MineSyncService.START_SYNC_ACTION));
         notificationTemplate.setOnClickPendingIntent(R.id.button_service_stop, getSyncAction(MineSyncService.STOP_SYNC_ACTION));
+    }
+
+    private void initializeNotification(PendingIntent pendingIntent) {
+        notification = new NotificationCompat.Builder(service.getApplicationContext())
+                .setTicker(getResourceText(R.string.label_notification_service_title))
+                .setContent(notificationTemplate)
+                .setSmallIcon(android.R.color.transparent)
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_MIN)
+                .setOngoing(true)
+                .setAutoCancel(false)
+                .setColor(getColor(R.color.dropbox_blue))
+                .build();
+        notification.flags |= Notification.FLAG_NO_CLEAR;
     }
 
     private void setState(boolean syncActive) {
