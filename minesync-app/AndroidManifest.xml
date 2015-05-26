@@ -22,7 +22,7 @@
         android:icon="@drawable/ic_launcher_minesync"
         android:label="@string/app_name"
         android:theme="@style/Theme.Minesync"
-        android:debuggable="true">
+        android:debuggable="false">
 
         <activity android:name=".gui.MineSyncMainActivity">
             <intent-filter>
