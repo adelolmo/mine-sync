@@ -6,12 +6,12 @@
     <parent>
         <groupId>org.ado.github</groupId>
         <artifactId>minesync</artifactId>
-        <version>1.3.0-SNAPSHOT</version>
+        <version>1.2.6-SNAPSHOT</version>
     </parent>
 
     <groupId>org.ado.github.minesync</groupId>
     <artifactId>minesync-app</artifactId>
-    <version>1.3.0-SNAPSHOT</version>
+    <version>1.2.6-SNAPSHOT</version>
     <packaging>apk</packaging>
     <name>Mine Sync - App</name>
 
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.ado.github</groupId>
             <artifactId>android-test-framework</artifactId>
-            <version>1.3.0-SNAPSHOT</version>
+            <version>1.2.6-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
