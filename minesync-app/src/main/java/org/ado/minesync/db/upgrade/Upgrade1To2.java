@@ -37,7 +37,7 @@ import static org.ado.minesync.commons.DateUtils.formatDate;
 import static org.ado.minesync.db.GeneralTableColumns.KEY_ID;
 import static org.ado.minesync.db.TableHistoryColumns.*;
 import static org.ado.minesync.db.TableWorldColumns.*;
-import static org.ado.minesync.db.WorldEntityFactory.getWorldEntityList;
+import static org.ado.minesync.db.upgrade.WorldEntityFactoryVersion1.getWorldEntityList;
 
 /**
  * Class description here.
@@ -88,13 +88,13 @@ public class Upgrade1To2 implements DatabaseVersion {
 
     private void restoreWorlds(SQLiteDatabase database, List<WorldEntity> worldCursorAll) {
         for (WorldEntity worldEntity : worldCursorAll) {
-            ALog.i(TAG, "restoring world [" + worldEntity + "]");
+            ALog.i(TAG, "restoring world [%s]", worldEntity);
             insertWorld(database, worldEntity);
         }
     }
 
     private void insertWorld(SQLiteDatabase database, WorldEntity worldEntity) {
-        ALog.d(TAG, "insert world [" + worldEntity + "]");
+        ALog.d(TAG, "insert world [%s]", worldEntity);
         ContentValues cv = new ContentValues();
         cv.put(WORLD_NAME_COLUMN, worldEntity.getName());
         cv.put(WORLD_MODIFICATION_DATE_COLUMN, formatDate(worldEntity.getModificationDate(), SQLITE_DATE_FORMAT));

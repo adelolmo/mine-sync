@@ -22,10 +22,12 @@
  * SOFTWARE.
  */
 
-package org.ado.minesync.db;
+package org.ado.minesync.db.upgrade;
 
 import android.database.Cursor;
 import org.ado.minesync.commons.DateUtils;
+import org.ado.minesync.db.SyncTypeEnum;
+import org.ado.minesync.db.WorldEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +41,7 @@ import static org.ado.minesync.db.TableWorldColumns.*;
  * @author andoni
  * @since 29.07.2014
  */
-public class WorldEntityFactory {
+public class WorldEntityFactoryVersion1 {
 
     public static WorldEntity getWorldEntity(Cursor worldCursor) {
         return new WorldEntity(
@@ -47,7 +49,7 @@ public class WorldEntityFactory {
                 worldCursor.getString(WORLD_NAME_COLUMN_INDEX),
                 DateUtils.parseSqlLiteDate(worldCursor.getString(WORLD_MODIFICATION_DATE_COLUMN_INDEX)),
                 worldCursor.getLong(WORLD_SIZE_COLUMN_INDEX),
-                SyncTypeEnum.find(worldCursor.getInt(WORLD_SYNC_TYPE_COLUMN_INDEX)));
+                SyncTypeEnum.AUTO);
     }
 
     public static List<WorldEntity> getWorldEntityList(Cursor cursor) {
