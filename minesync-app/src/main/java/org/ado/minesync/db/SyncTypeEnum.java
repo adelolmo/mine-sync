@@ -51,6 +51,6 @@ public enum SyncTypeEnum {
                 return syncTypeEnum;
             }
         }
-        throw new IllegalArgumentException("No sync type found for syncType \"" + syncType + "\".");
+        throw new IllegalArgumentException(String.format("No sync type found for syncType \"%s\".", syncType));
     }
 }

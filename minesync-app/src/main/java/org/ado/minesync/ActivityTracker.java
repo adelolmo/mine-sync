@@ -26,7 +26,7 @@ package org.ado.minesync;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
+import org.ado.minesync.commons.ALog;
 
 import static org.ado.minesync.config.AppConstants.*;
 
@@ -50,7 +50,7 @@ public class ActivityTracker {
     }
 
     public void setConfigurationProcess(boolean finished) {
-        if (L) Log.d(TAG, "setConfigurationProcess [" + finished + "]");
+        ALog.d(TAG, "setConfigurationProcess [%s]", finished);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(SHARE_CONFIGURATION_PROCESS_FINISHED, finished);
         editor.commit();
@@ -58,12 +58,12 @@ public class ActivityTracker {
 
     public boolean isConfigurationProcessFinished() {
         boolean configurationProcessFinished = this.sharedPreferences.getBoolean(SHARE_CONFIGURATION_PROCESS_FINISHED, false);
-        if (L) Log.d(TAG, "isConfigurationProcessFinished? [" + configurationProcessFinished + "]");
+        ALog.d(TAG, "isConfigurationProcessFinished? [%s]", configurationProcessFinished);
         return configurationProcessFinished;
     }
 
     public void setNeedToShowConfigurationProcessFinishedDialog(boolean needToShowDialog) {
-        if (L) Log.d(TAG, "setNeedToShowConfigurationProcessFinishedDialog [" + needToShowDialog + "]");
+        ALog.d(TAG, "setNeedToShowConfigurationProcessFinishedDialog [%s]", needToShowDialog);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(NEED_TO_SHOW_CONFIGURATION_PROCESS_FINISHED_DIALOG, needToShowDialog);
         editor.commit();

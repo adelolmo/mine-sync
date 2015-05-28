@@ -29,7 +29,6 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
-import android.util.Log;
 import com.dropbox.sync.android.DbxException;
 import org.ado.minesync.ActivityTracker;
 import org.ado.minesync.commons.ALog;
@@ -114,7 +113,7 @@ public class UploadDownloadService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        ALog.d(TAG, "onHandleIntent. intent[" + intent + "].");
+        ALog.d(TAG, "onHandleIntent. intent[%s].", intent);
         removeCallbacks();
         handler.postDelayed(sendUpdatesToUI, 5000);
 
@@ -152,7 +151,7 @@ public class UploadDownloadService extends IntentService {
         switch (operationType) {
             case DOWNLOAD:
                 mineSyncNotification.buildNotification(false);
-                mineSyncNotification.updateSyncState(MineSyncService.SyncStateEnum.UPLOADING_DONWLOADING);
+                mineSyncNotification.updateSyncState(MineSyncService.SyncStateEnum.UPLOADING_DOWNLOADING);
                 minecraftWorldManager.downloadWorld(worldName, syncType, getMinecraftWorldListener(worldName));
                 break;
             case DOWNLOAD_ALL:
@@ -161,7 +160,7 @@ public class UploadDownloadService extends IntentService {
                 break;
             case UPLOAD:
                 mineSyncNotification.buildNotification(false);
-                mineSyncNotification.updateSyncState(MineSyncService.SyncStateEnum.UPLOADING_DONWLOADING);
+                mineSyncNotification.updateSyncState(MineSyncService.SyncStateEnum.UPLOADING_DOWNLOADING);
                 minecraftWorldManager.uploadWorld(worldName, syncType, getMinecraftWorldListener(worldName));
                 break;
             case UPLOAD_ALL:
@@ -233,7 +232,7 @@ public class UploadDownloadService extends IntentService {
     }
 
     private void publishProgress(int percentage) {
-        ALog.d(TAG, "publishProgress [" + percentage + "]");
+        ALog.d(TAG, "publishProgress [%d]", percentage);
         this.progress = percentage;
         configurationNotification.setProgress(percentage);
     }
@@ -242,7 +241,7 @@ public class UploadDownloadService extends IntentService {
         try {
             return minecraftWorldManager.getDropboxNumberOfFiles();
         } catch (DbxException e) {
-            Log.w(TAG, "Cannot access Dropbox", e);
+            ALog.w(TAG, e, "Cannot access Dropbox");
             return 0;
         }
     }

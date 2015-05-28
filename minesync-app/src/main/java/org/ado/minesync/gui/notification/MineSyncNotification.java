@@ -77,7 +77,7 @@ public class MineSyncNotification {
         }
         if (notificationTemplate != null) {
             switch (state) {
-                case UPLOADING_DONWLOADING:
+                case UPLOADING_DOWNLOADING:
                     notification.icon = R.drawable.ic_stat_upload_download;
                     notificationTemplate.setImageViewResource(R.id.status_icon, R.drawable.ic_stat_upload_download);
                     notificationTemplate.setViewVisibility(R.id.button_service_start, View.INVISIBLE);

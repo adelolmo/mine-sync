@@ -30,7 +30,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
-import android.util.Log;
 import com.dropbox.sync.android.*;
 import org.ado.minesync.commons.ALog;
 import org.ado.minesync.config.AppConfiguration;
@@ -39,8 +38,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.ado.minesync.config.AppConstants.L;
 
 /**
  * Class description here.
@@ -100,7 +97,7 @@ public class SyncManagerReceiver extends BroadcastReceiver {
 
             }
         } catch (IOException e) {
-            Log.w(TAG, "File upload failed! [" + syncFile.getFile().getAbsolutePath() + "]");
+            ALog.w(TAG, "File upload failed! [%s]", syncFile.getFile().getAbsolutePath());
             Intent intent = new Intent("org.ado.minesync.UPLOAD_FAILED");
             intent.putExtra("file", syncFile.getFile().getAbsolutePath());
             context.sendBroadcast(intent);
@@ -112,15 +109,15 @@ public class SyncManagerReceiver extends BroadcastReceiver {
     }
 
     private void uploadFile(final Context context, final File localFile, DbxFile dbxFile) throws IOException {
-        ALog.d(TAG, "upload local localFile [" + localFile.getAbsolutePath() + "] to Dropbox.");
+        ALog.d(TAG, "upload local localFile [%s] to Dropbox.", localFile.getAbsolutePath());
         dbxFile.writeFromExistingFile(localFile, false);
         dbxFile.addListener(new DbxFile.Listener() {
             @Override
             public void onFileChange(DbxFile dbxFile) {
                 try {
                     if (dbxFile.getSyncStatus().pending.equals(DbxFileStatus.PendingOperation.NONE)) {
-                        if (L) Log.i(TAG, "Uploading of localFile successful [" + dbxFile.getPath() + "]");
-                        ALog.d(TAG, "close dbxFile[" + dbxFile.getPath().getName() + "].");
+                        ALog.i(TAG, "Uploading of localFile successful [%s]", dbxFile.getPath());
+                        ALog.d(TAG, "close dbxFile[%s].", dbxFile.getPath().getName());
                         dbxFile.close();
                         Intent intent = new Intent("org.ado.minesync.UPLOAD_FINISHED");
                         intent.putExtra("file", localFile.getAbsolutePath());
