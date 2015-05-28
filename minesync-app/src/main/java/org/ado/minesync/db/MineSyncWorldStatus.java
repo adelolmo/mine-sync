@@ -28,7 +28,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 import org.ado.minesync.commons.ALog;
 import org.ado.minesync.commons.DateUtils;
 
@@ -66,18 +65,18 @@ public class MineSyncWorldStatus {
                 }
             }
         } catch (Exception e) {
-            Log.e(TAG, "Cannot get world from table \"" + WORLD_TABLE + "\".", e);
+            ALog.e(TAG, e, "Cannot get world from table \"%s\".", WORLD_TABLE);
         }
         return minecraftWorldList;
     }
 
     public WorldEntity getWorld(String name) {
-        ALog.d(TAG, "get world. name [" + name + "]");
+        ALog.d(TAG, "get world. name [%s]", name);
         WorldEntity worldEntity = dbHelper.getWorldByName(name);
         if (worldEntity != null) {
-            ALog.d(TAG, "world found [" + worldEntity + "]");
+            ALog.d(TAG, "world found [%s]", worldEntity);
         } else {
-            ALog.d(TAG, "world [" + name + "] not found in database.");
+            ALog.d(TAG, "world [%s] not found in database.", name);
         }
         return worldEntity;
     }
@@ -89,7 +88,7 @@ public class MineSyncWorldStatus {
             database = dbHelper.getWritableDatabase();
             WorldEntity persistedWorld = dbHelper.getWorldByName(worldEntity.getName());
             if (persistedWorld != null) {
-                ALog.d(TAG, "update world [" + worldEntity + "]");
+                ALog.d(TAG, "update world [%s]", worldEntity);
                 ContentValues cv = new ContentValues();
                 cv.put(WORLD_MODIFICATION_DATE_COLUMN, DateUtils.formatSqlLiteDate(worldEntity.getModificationDate()));
                 cv.put(WORLD_SIZE_COLUMN, worldEntity.getSize());
@@ -97,7 +96,7 @@ public class MineSyncWorldStatus {
                 database.update(WORLD_TABLE, cv, WORLD_NAME_COLUMN + "=?", new String[]{worldEntity.getName()});
                 worldId = persistedWorld.getId();
             } else {
-                ALog.d(TAG, "insert world [" + worldEntity + "]");
+                ALog.d(TAG, "insert world [%s]", worldEntity);
                 ContentValues cv = new ContentValues();
                 cv.put(WORLD_NAME_COLUMN, worldEntity.getName());
                 cv.put(WORLD_MODIFICATION_DATE_COLUMN, DateUtils.formatSqlLiteDate(worldEntity.getModificationDate()));
@@ -107,7 +106,7 @@ public class MineSyncWorldStatus {
             }
             dbHelper.insertWorldHistory(worldEntity, worldId, historyActionEnum);
         } catch (Exception e) {
-            ALog.e(TAG, e, "Cannot update table \"" + WORLD_TABLE + "\".");
+            ALog.e(TAG, e, "Cannot update table \"%s\".", WORLD_TABLE);
         }
     }
 

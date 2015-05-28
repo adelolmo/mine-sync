@@ -42,7 +42,7 @@ public class BootUpReceiver extends BroadcastReceiver {
         if (intent.getAction().equalsIgnoreCase(Intent.ACTION_BOOT_COMPLETED)) {
             PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             boolean isScreenOn = pm.isScreenOn();
-            ALog.i(TAG, "screen is on? [" + isScreenOn + "]");
+            ALog.i(TAG, "screen is on? [%s]", isScreenOn);
             Intent mineSyncServiceIntent = new Intent(context, MineSyncService.class);
             mineSyncServiceIntent.setAction(MineSyncService.START_SYNC_ACTION);
             mineSyncServiceIntent.putExtra(INTENT_PARAMETER_FOREGROUND_WATCHER_ENABLE, isScreenOn);

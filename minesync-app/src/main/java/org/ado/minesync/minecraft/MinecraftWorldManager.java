@@ -254,7 +254,7 @@ public class MinecraftWorldManager {
             }
 
         } catch (IOException e) {
-            ALog.e(TAG, e, "Cannot update local world \"" + MinecraftUtils.getDirectoryName(filename) + "\".");
+            ALog.e(TAG, e, "Cannot update local world \"%s\".", MinecraftUtils.getDirectoryName(filename));
         } finally {
             IOUtils.closeQuietly(inputStream);
             FileUtils.deleteQuietly(zipWorld);
@@ -316,7 +316,7 @@ public class MinecraftWorldManager {
     }
 
     private void extractAndReplaceLocalWorld(File zippedWorldFile, SyncTypeEnum syncType) throws MineSyncException {
-        ALog.d(TAG, "extract world from file [" + zippedWorldFile.getAbsolutePath() + "]");
+        ALog.d(TAG, "extract world from file [%s]", zippedWorldFile.getAbsolutePath());
         checkConflictedZipWorld(zippedWorldFile);
         if (MinecraftUtils.isMinecraftInstalled()) {
             try {
@@ -346,7 +346,6 @@ public class MinecraftWorldManager {
     }
 
     private void updateWorldStatus(File zipFile, HistoryActionEnum historyActionEnum, SyncTypeEnum syncType) {
-//        updateWorldStatus(zipFile, zipFile.lastModified(), historyActionEnum);
         mineSyncWorldStatus
                 .updateWorld(new WorldEntity(MinecraftUtils.getWorldName(zipFile),
                                 new Date(zipFile.lastModified()),

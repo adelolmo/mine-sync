@@ -200,7 +200,7 @@ public class MinecraftPeStateReceiver extends BroadcastReceiver {
     }
 
     private void notifySyncError(Context context, String worldName, Exception e) {
-        ALog.e(TAG, e, "Unable to upload world [" + worldName + "]. Skipping.");
+        ALog.e(TAG, e, "Unable to upload world [%s]. Skipping.", worldName);
         writeToastWorldSaveError(context);
     }
 

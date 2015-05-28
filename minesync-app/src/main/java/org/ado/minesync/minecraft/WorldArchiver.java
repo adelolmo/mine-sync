@@ -50,8 +50,7 @@ public class WorldArchiver {
 
     public File getZippedWorld(Context context, MinecraftWorld world) throws IOException {
         File zipWorldFile = new File(context.getCacheDir(), getZipFilename(world));
-        ALog.v(TAG, "compress world [" + world.getName()
-                + "] to zip [" + zipWorldFile.getAbsolutePath() + "].");
+        ALog.v(TAG, "compress world [%s] to zip [%s].",world.getName(), zipWorldFile.getAbsolutePath());
         zipArchiver.zip(world.getContentList(), zipWorldFile);
         return zipWorldFile;
     }

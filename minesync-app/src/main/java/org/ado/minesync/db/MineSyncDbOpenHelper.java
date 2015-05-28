@@ -105,7 +105,7 @@ public class MineSyncDbOpenHelper extends SQLiteOpenHelper {
     }
 
     public void updateWorldSyncType(String worldName, SyncTypeEnum syncType) {
-        ALog.d(TAG, "update world's [" + worldName + "] syncType [" + syncType + "].");
+        ALog.d(TAG, "update world's [%s] syncType [%s].", worldName, syncType);
         SQLiteDatabase database = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(WORLD_SYNC_TYPE_COLUMN, syncType.getSyncType());
@@ -113,7 +113,7 @@ public class MineSyncDbOpenHelper extends SQLiteOpenHelper {
     }
 
     public void insertWorldHistory(WorldEntity worldEntity, long worldId, HistoryActionEnum historyActionEnum) {
-        ALog.d(TAG, "insert history [" + worldEntity + "]");
+        ALog.d(TAG, "insert history [%s]", worldEntity);
         ContentValues cv = new ContentValues();
         cv.put(HISTORY_WORLD_ID, worldId);
         cv.put(HISTORY_DATE, DateUtils.formatSqlLiteDate(new Date()));
@@ -156,7 +156,7 @@ public class MineSyncDbOpenHelper extends SQLiteOpenHelper {
                 WORLD_SIZE_COLUMN,
                 WORLD_SYNC_TYPE_COLUMN};
         SQLiteDatabase database = getReadableDatabase();
-        ALog.d(TAG, "get world all. database path [" + database.getPath() + "] version [" + database.getVersion() + "].");
+        ALog.d(TAG, "get world all. database path [%s] version [%d].", database.getPath(), database.getVersion());
         return database
                 .query(WORLD_TABLE,
                         resultColumns,
@@ -174,7 +174,7 @@ public class MineSyncDbOpenHelper extends SQLiteOpenHelper {
     public Cursor getHistoryCursorAll() {
         String[] resultColumns = new String[]{KEY_ID, HISTORY_WORLD_ID, HISTORY_DATE, HISTORY_ACTION, HISTORY_SIZE};
         SQLiteDatabase database = getReadableDatabase();
-        ALog.d(TAG, "get history all. database path [" + database.getPath() + "] version [" + database.getVersion() + "].");
+        ALog.d(TAG, "get history all. database path [%s] version [%d].", database.getPath(), database.getVersion());
         return database
                 .query(HISTORY_TABLE,
                         resultColumns,

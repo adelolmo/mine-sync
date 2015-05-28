@@ -33,7 +33,6 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
-import android.util.Log;
 import com.dropbox.sync.android.DbxAccountManager;
 import com.dropbox.sync.android.DbxException;
 import com.dropbox.sync.android.DbxFileSystem;
@@ -120,15 +119,15 @@ public class MineSyncService extends Service {
     }
 
     private boolean isKitKat() {
-        ALog.i(TAG, "SDK version [" + Build.VERSION.SDK_INT + "].");
+        ALog.i(TAG, "SDK version [%d].", Build.VERSION.SDK_INT);
         boolean b = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-        ALog.i(TAG, "is KitKat? [" + b + "].");
+        ALog.i(TAG, "is KitKat? [%s].", b);
         return b;
     }
 
     @Override
     public void onTrimMemory(int level) {
-        ALog.i(TAG, "onTrimMemory - level [" + level + "].");
+        ALog.i(TAG, "onTrimMemory - level [%d].", level);
     }
 
     @Override
@@ -144,7 +143,7 @@ public class MineSyncService extends Service {
             }
             ALog.i(TAG, "Service destroyed.");
         } catch (DbxQueueException e) {
-            Log.e(TAG, "Cannot release file listeners", e);
+            ALog.e(TAG, e, "Cannot release file listeners");
         }
         handler.removeCallbacks(this.runnable);
         unregisterReceiver(screenReceiver);
@@ -159,7 +158,7 @@ public class MineSyncService extends Service {
 
     private void handleIntent(Intent intent) {
         final String action = intent.getAction();
-        ALog.d(TAG, "action [" + action + "]");
+        ALog.d(TAG, "action [%s]", action);
         if (START_SYNC_ACTION.equals(action)) {
             startDropboxSync();
             startForegroundApplicationWatcher();
@@ -169,7 +168,7 @@ public class MineSyncService extends Service {
 
         } else {
             boolean foregroundWatcherEnable = isForegroundWatcherEnable(intent);
-            ALog.d(TAG, "foreground_watcher_enable? [" + foregroundWatcherEnable + "]");
+            ALog.d(TAG, "foreground_watcher_enable? [%s]", foregroundWatcherEnable);
             if (foregroundWatcherEnable) {
                 startForegroundApplicationWatcher();
             } else {
@@ -194,7 +193,7 @@ public class MineSyncService extends Service {
                 notificationDropboxConnectionError();
             }
         } catch (DbxException.Unauthorized unauthorized) {
-            Log.e(TAG, "Cannot access dropbox folder", unauthorized);
+            ALog.e(TAG, unauthorized, "Cannot access dropbox folder");
         }
     }
 
@@ -205,7 +204,7 @@ public class MineSyncService extends Service {
 
     private SyncStateEnum getState(boolean syncActive, boolean mineSyncUploading) {
         if (mineSyncUploading) {
-            return SyncStateEnum.UPLOADING_DONWLOADING;
+            return SyncStateEnum.UPLOADING_DOWNLOADING;
         } else {
             return syncActive ? SyncStateEnum.SYNC_ACTIVE : SyncStateEnum.SYNC_DISABLE;
         }
@@ -280,9 +279,8 @@ public class MineSyncService extends Service {
 
     private void logApplications() {
         ActivityManager am = (ActivityManager) super.getApplicationContext().getSystemService(Activity.ACTIVITY_SERVICE);
-//        String packageName = am.getRunningTasks(1).get(0).topActivity.getPackageName();
         String packageName = am.getRunningAppProcesses().get(0).processName;
-        ALog.v(TAG, packageName + "    in use[" + applicationInForeground + "]");
+        ALog.v(TAG, "%s     in use[%s]", packageName, applicationInForeground);
         if (!applicationInForeground.equals(packageName)) {
             notifyApplicationInUse(packageName);
             this.applicationInForeground = packageName;
@@ -293,14 +291,14 @@ public class MineSyncService extends Service {
         Intent foregroundAppIntent = new Intent(INTENT_FOREGROUND_APP);
         foregroundAppIntent.putExtra(INTENT_PARAMETER_FOREGROUND_APP, applicationInUse);
         sendBroadcast(foregroundAppIntent);
-        ALog.d(TAG, "application currently in foreground [" + applicationInUse + "]");
+        ALog.d(TAG, "application currently in foreground [%s]", applicationInUse);
     }
 
     public enum SyncStateEnum {
         SYNC_ACTIVE,
         SYNC_DISABLE,
         DROPBOX_CONNECTION_ERROR,
-        UPLOADING_DONWLOADING
+        UPLOADING_DOWNLOADING
     }
 
     public class MineSyncBinder extends Binder {
