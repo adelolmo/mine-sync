@@ -24,10 +24,10 @@
 
 package org.ado.minesync.json;
 
+import org.ado.minesync.ClassTestCase;
 import org.ado.minesync.commons.DateUtils;
 import org.ado.minesync.db.SyncTypeEnum;
 import org.ado.minesync.db.WorldEntity;
-import org.ado.minesync.github.ClassTestCase;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
 import org.junit.Before;

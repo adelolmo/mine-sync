@@ -22,40 +22,36 @@
  * SOFTWARE.
  */
 
-package org.ado.minesync.github;
+package org.ado.minesync;
 
-import org.ado.atf.AndroidTestFramework;
-import org.ado.minesync.UpgradeManager;
-import org.junit.Before;
-import org.junit.Test;
 
-import java.io.File;
-
-import static junit.framework.Assert.assertEquals;
-import static org.ado.atf.Config.APPLICATION_FILES_DIR;
+import org.ado.minesync.db.WorldEntity;
+import org.apache.commons.lang.StringUtils;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
 
 /**
  * Class description here.
  *
  * @author andoni
- * @since 14.03.2014
+ * @since 15.03.2014
  */
-public class UpgradeManagerTest extends ClassTestCase<UpgradeManager> {
+public class WorldEntityMatcher extends BaseMatcher<WorldEntity> {
 
-    @Before
-    public void setUp() throws Exception {
-        AndroidTestFramework.setAndroidManifestFile(new File("src/test/resources/AndroidManifest-v4.xml"));
-        AndroidTestFramework.init();
-        createUnitUnderTest(new UpgradeManager(AndroidTestFramework.getContext()));
+    private String worldName;
+
+    public WorldEntityMatcher(String worldName) {
+        this.worldName = worldName;
     }
 
-    @Test
-    public void testUpgradeIfNeeded_v3to4() throws Exception {
-        AndroidTestFramework.addSharedPreference("current.version", 3);
-        File tempFile = File.createTempFile("test", null, APPLICATION_FILES_DIR);
+    @Override
+    public boolean matches(Object o) {
+        return o instanceof WorldEntity
+                && StringUtils.equals(worldName, ((WorldEntity) o).getName());
+    }
 
-        unitUnderTest.upgradeIfNeeded();
-
-        assertEquals("no files found", 0, APPLICATION_FILES_DIR.listFiles().length);
+    @Override
+    public void describeTo(Description description) {
+        description.appendText("is ").appendText(worldName);
     }
 }

@@ -26,7 +26,7 @@ package org.ado.minesync.minecraft;
 
 import android.os.Environment;
 import org.ado.atf.AndroidTestFramework;
-import org.ado.minesync.github.AndroidTestCase;
+import org.ado.minesync.AndroidTestCase;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,7 +37,7 @@ import java.util.List;
 
 import static org.ado.minesync.minecraft.MinecraftConstants.MINECRAFT_HOME;
 import static org.ado.minesync.minecraft.MinecraftConstants.MINECRAFT_WORLDS;
-import static org.ado.minesync.github.mock.MockMinecraftWorldFactory.createWorld;
+import static org.ado.minesync.mock.MockMinecraftWorldFactory.createWorld;
 import static org.junit.Assert.*;
 
 /**

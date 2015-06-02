@@ -24,8 +24,8 @@
 
 package org.ado.minesync.minecraft;
 
+import org.ado.minesync.MockitoTestCase;
 import org.ado.minesync.db.WorldEntity;
-import org.ado.minesync.github.MockitoTestCase;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

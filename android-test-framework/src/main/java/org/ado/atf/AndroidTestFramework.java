@@ -1,7 +1,6 @@
 package org.ado.atf;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -21,18 +20,20 @@ public class AndroidTestFramework {
 
     public static void clear() {
         try {
-            FileUtils.cleanDirectory(Config.ANDROID_TEST_FRAMEWORD_DIR);
+            FileUtils.cleanDirectory(Config.ANDROID_TEST_FRAMEWORK_DIR);
         } catch (Exception e) {
-            System.out.println(Config.ANDROID_TEST_FRAMEWORD_DIR + " is already empty.");
+            System.out.println(Config.ANDROID_TEST_FRAMEWORK_DIR + " is already empty.");
         }
     }
 
     public static void init() throws IOException {
         clear();
-        Config.APPLICATION_FILES_DIR.mkdirs();
-        Config.APPLICATION_CACHE_DIR.mkdirs();
-        Config.SDCARD_DIR.mkdirs();
-        context = new Context(new PackageManager());
+        FileUtils.forceMkdir(Config.APPLICATION_FILES_DIR);
+        FileUtils.forceMkdir(Config.APPLICATION_CACHE_DIR);
+        FileUtils.forceMkdir(Config.SDCARD_DIR);
+//        context = new Context(new PackageManager());
+//        context= new MockContext();
+        context = ContextFactory.createContext();
     }
 
     public static void setAndroidManifestFile(File manifestFile) {
@@ -40,7 +41,7 @@ public class AndroidTestFramework {
     }
 
     public static void addSharedPreference(String key, Object value) {
-        Context.addSharedPreference(key, value);
+//        Context.addSharedPreference(key, value);
     }
 
     public static AndroidManifest getAndroidManifest() {
