@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.ado.minesync.github;
+package org.ado.minesync;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

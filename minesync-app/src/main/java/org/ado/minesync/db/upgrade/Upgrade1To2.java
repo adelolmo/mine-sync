@@ -99,6 +99,7 @@ public class Upgrade1To2 implements DatabaseVersion {
         cv.put(WORLD_NAME_COLUMN, worldEntity.getName());
         cv.put(WORLD_MODIFICATION_DATE_COLUMN, formatDate(worldEntity.getModificationDate(), SQLITE_DATE_FORMAT));
         cv.put(WORLD_SIZE_COLUMN, worldEntity.getSize());
+        cv.put(WORLD_SYNC_TYPE_COLUMN, worldEntity.getSyncType().getSyncType());
         database.insert(WORLD_TABLE, KEY_ID, cv);
     }
 }

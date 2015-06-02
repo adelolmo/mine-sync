@@ -26,7 +26,7 @@ package org.ado.minesync.dropbox;
 
 import android.content.Context;
 import com.dropbox.sync.android.DbxFile;
-import org.ado.minesync.github.ClassTestCase;
+import org.ado.minesync.ClassTestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;

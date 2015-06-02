@@ -22,16 +22,16 @@
  * SOFTWARE.
  */
 
-package org.ado.minesync.github.mock;
+package org.ado.minesync.mock;
 
-import org.ado.minesync.github.TestFileUtils;
+import org.ado.minesync.TestFileUtils;
 import org.apache.commons.io.FileUtils;
-
-import static org.ado.atf.Config.APPLICATION_CACHE_DIR;
-import static org.ado.minesync.minecraft.MinecraftConstants.MINECRAFT_WORLDS;
 
 import java.io.File;
 import java.io.IOException;
+
+import static org.ado.atf.Config.APPLICATION_CACHE_DIR;
+import static org.ado.minesync.minecraft.MinecraftConstants.MINECRAFT_WORLDS;
 
 /**
  * Created with IntelliJ IDEA.

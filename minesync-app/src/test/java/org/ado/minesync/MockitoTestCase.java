@@ -22,35 +22,21 @@
  * SOFTWARE.
  */
 
-package org.ado.minesync.github;
+package org.ado.minesync;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
+import org.junit.Before;
+import org.mockito.MockitoAnnotations;
 
 /**
- * Class description here.
- *
- * @author andoni
- * @since 07.12.2013
+ * Created with IntelliJ IDEA.
+ * User: andoni
+ * Date: 19/10/13
+ * Time: 12:46
+ * To change this template use File | Settings | File Templates.
  */
-public class TestFileUtils {
-
-    public static void addFile(File directory, String filePath) throws IOException {
-        File file = new File(directory, getFilename(filePath));
-        FileUtils.copyURLToFile(getResource(filePath), file);
-    }
-
-    private static String getFilename(String filePath) {
-        if(filePath.contains("/")){
-            filePath = filePath.substring(filePath.indexOf("/"), filePath.length());
-        }
-        return filePath;
-    }
-
-    public static URL getResource(String resource) {
-        return TestFileUtils.class.getClassLoader().getResource(resource);
+public class MockitoTestCase {
+    @Before
+    public void setUpHCTestCase() {
+        MockitoAnnotations.initMocks(this);
     }
 }

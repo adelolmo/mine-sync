@@ -16,7 +16,8 @@
     <name>Mine Sync - App</name>
 
     <properties>
-        <artifact.dist.name>${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk</artifact.dist.name>
+        <sign.aligned.directory>${project.build.directory}/signed-aligned</sign.aligned.directory>
+        <artifact.dist.name>${sign.aligned.directory}/${project.artifactId}-${project.version}.apk</artifact.dist.name>
     </properties>
 
     <dependencies>
@@ -71,6 +72,8 @@
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+
         <extensions>
             <!-- Enabling the use of sftp -->
             <extension>
@@ -79,8 +82,27 @@
                 <version>1.0</version>
             </extension>
         </extensions>
-        <finalName>${project.artifactId}-${project.version}</finalName>
+
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>mkdir</id>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <target name="create-sign_aligned_directory">
+                                <mkdir dir="${sign.aligned.directory}"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <dependencies>
@@ -149,7 +171,7 @@
                         <skip>false</skip>
                         <verbose>true</verbose>
                         <inputApk>${project.build.directory}/${project.artifactId}-${project.version}.apk</inputApk>
-                        <outputApk>${artifact.dist.name}</outputApk>
+                        <outputApk>${sign.aligned.directory}/${project.artifactId}-${project.version}.apk</outputApk>
                     </zipalign>
                 </configuration>
                 <executions>
@@ -217,7 +239,7 @@
                         <version>1.2.1</version>
                         <executions>
                             <execution>
-                                <id>install-jbpm</id>
+                                <id>install-dropbox-sync</id>
                                 <phase>validate</phase>
                                 <goals>
                                     <goal>wget</goal>

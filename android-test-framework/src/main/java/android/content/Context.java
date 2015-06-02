@@ -24,6 +24,8 @@
 
 package android.content;
 
+//import android.content.pm.PackageManager;
+
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import org.ado.atf.Config;
@@ -41,7 +43,7 @@ public class Context {
     private PackageManager packageManager;
     private static DefaultSharedPreferences sharedPreferences = new DefaultSharedPreferences();
 
-    public Context(PackageManager packageManager) {
+    public Context() {
         this.packageManager = new PackageManager();
     }
 

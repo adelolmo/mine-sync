@@ -26,13 +26,13 @@ package org.ado.minesync.minecraft;
 
 import com.dropbox.sync.android.DbxAccountManager;
 import org.ado.atf.AndroidTestFramework;
-import org.ado.minesync.github.AndroidTestCase;
-import org.ado.minesync.github.WorldEntityMatcher;
+import org.ado.minesync.AndroidTestCase;
+import org.ado.minesync.WorldEntityMatcher;
 import org.ado.minesync.commons.ZipArchiver;
 import org.ado.minesync.db.HistoryActionEnum;
 import org.ado.minesync.db.MineSyncWorldStatus;
 import org.ado.minesync.exception.MineSyncException;
-import org.ado.minesync.github.mock.MockMinecraftWorldFactory;
+import org.ado.minesync.mock.MockMinecraftWorldFactory;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Rule;

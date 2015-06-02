@@ -24,7 +24,7 @@
 
 package org.ado.minesync.commons;
 
-import org.ado.minesync.github.ClassTestCase;
+import org.ado.minesync.ClassTestCase;
 import org.apache.commons.io.FilenameUtils;
 import org.junit.Rule;
 import org.junit.Test;
@@ -42,8 +42,8 @@ import java.util.zip.ZipFile;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
-import static org.ado.minesync.github.TestFileUtils.addFile;
-import static org.ado.minesync.github.TestFileUtils.getResource;
+import static org.ado.minesync.TestFileUtils.addFile;
+import static org.ado.minesync.TestFileUtils.getResource;
 import static org.apache.commons.io.FileUtils.forceMkdir;
 
 /**

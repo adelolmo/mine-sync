@@ -26,8 +26,6 @@ package android.content.pm;
 
 import org.ado.atf.AndroidTestFramework;
 
-import javax.naming.NameNotFoundException;
-
 /**
  * Class description here.
  *
@@ -50,8 +48,6 @@ public class PackageManager {
 
     public PackageInfo getPackageInfo(String packageName, int flags)
             throws NameNotFoundException {
-//        FileUtils.copyInputStreamToFile(PackageManager.class.getResourceAsStream(""));
-//        PackageManager.class.
         return packageInfo;
     }
 
