@@ -275,13 +275,14 @@ public class DropboxFragment extends Fragment {
 
         @Override
         public void onLinkedAccountChange(DbxAccountManager dbxAccountManager, DbxAccount dbxAccount) {
-            // TODO check if fragment is attach
-            if (dbxAccount.isLinked()) {
-                setViewDropboxAccountLinked();
-                notifyDropboxAccountLinked(fragmentActivity);
-            } else {
-                setViewDropboxAccountNotLinked();
-                notifyDropboxAccountUnlinked(fragmentActivity);
+            if (!fragmentActivity.getSupportFragmentManager().isDestroyed()) {
+                if (dbxAccount.isLinked()) {
+                    setViewDropboxAccountLinked();
+                    notifyDropboxAccountLinked(fragmentActivity);
+                } else {
+                    setViewDropboxAccountNotLinked();
+                    notifyDropboxAccountUnlinked(fragmentActivity);
+                }
             }
         }
     }
@@ -295,7 +296,7 @@ public class DropboxFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Log.i(TAG, "button link to dropbox was clicked.");
+            ALog.i(TAG, "button link to dropbox was clicked.");
 
             if (MinecraftUtils.isMinecraftInstalled()) {
                 accountManager.startLink(fragmentActivity, REQUEST_LINK_TO_DBX);
