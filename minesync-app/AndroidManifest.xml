@@ -21,8 +21,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher_minesync"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Minesync"
-        android:debuggable="false">
+        android:theme="@style/Theme.Minesync">
 
         <activity android:name=".gui.MineSyncMainActivity">
             <intent-filter>

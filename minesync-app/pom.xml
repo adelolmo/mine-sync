@@ -16,6 +16,7 @@
     <name>Mine Sync - App</name>
 
     <properties>
+        <unsign.artifact.dist.name>${project.build.directory}/${project.build.finalName}.apk</unsign.artifact.dist.name>
         <sign.aligned.directory>${project.build.directory}/signed-aligned</sign.aligned.directory>
         <artifact.dist.name>${sign.aligned.directory}/${project.artifactId}-${project.version}.apk</artifact.dist.name>
     </properties>
@@ -63,7 +64,6 @@
             <artifactId>json-simple</artifactId>
         </dependency>
 
-
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -72,7 +72,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
+        <finalName>${project.artifactId}</finalName>
 
         <extensions>
             <!-- Enabling the use of sftp -->
@@ -87,13 +87,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
                 <executions>
                     <execution>
                         <id>mkdir</id>
                         <phase>initialize</phase>
                         <configuration>
-                            <target name="create-sign_aligned_directory">
+                            <target name="create_sign_aligned_directory">
                                 <mkdir dir="${sign.aligned.directory}"/>
                             </target>
                         </configuration>
@@ -138,8 +137,7 @@
                             <removeExistingSignatures>true</removeExistingSignatures>
                             <archiveDirectory/>
                             <includes>
-                                <include>${project.build.directory}/${project.artifactId}-${project.version}.apk
-                                </include>
+                                <include>${unsign.artifact.dist.name}</include>
                             </includes>
                             <keystore>${sign.keystore}</keystore>
                             <alias>${sign.alias}</alias>
@@ -170,8 +168,8 @@
                     <zipalign>
                         <skip>false</skip>
                         <verbose>true</verbose>
-                        <inputApk>${project.build.directory}/${project.artifactId}-${project.version}.apk</inputApk>
-                        <outputApk>${sign.aligned.directory}/${project.artifactId}-${project.version}.apk</outputApk>
+                        <inputApk>${unsign.artifact.dist.name}</inputApk>
+                        <outputApk>${artifact.dist.name}</outputApk>
                     </zipalign>
                 </configuration>
                 <executions>
