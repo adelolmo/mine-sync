@@ -29,17 +29,25 @@ import org.ado.minesync.commons.DateUtils;
 import org.ado.minesync.db.SyncTypeEnum;
 import org.ado.minesync.db.WorldEntity;
 import org.apache.commons.io.FileUtils;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
 public class JsonWorldsAdapterTest extends ClassTestCase<JsonWorldsAdapter> {
+
+    @Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
 
     @Before
     public void setUp() throws Exception {
@@ -53,14 +61,19 @@ public class JsonWorldsAdapterTest extends ClassTestCase<JsonWorldsAdapter> {
                 createWorldEntity("worldTwo", "21.12.1973 12:30:01", 2000, SyncTypeEnum.MANUAL)
         ));
 
-        assertEquals("json world array",
-                "{\"worlds\":[{\"syncType\":1,\"name\":\"worldOne\"},{\"syncType\":0,\"name\":\"worldTwo\"}]}",
-                worldListToJson.toJSONString());
+        assertJsonObject(new HashMap<String, String>() {{
+            put("name", "worldOne");
+            put("syncType", "1");
+        }}, worldListToJson, 0);
+        assertJsonObject(new HashMap<String, String>() {{
+            put("name", "worldTwo");
+            put("syncType", "0");
+        }}, worldListToJson, 1);
     }
 
     @Test
     public void testGetWorldList() throws Exception {
-        File file = File.createTempFile("test", "json");
+        File file = temporaryFolder.newFile();
         FileUtils.write(file, "{\"worlds\":[{\"syncType\":1,\"name\":\"worldOne\"},{\"syncType\":0,\"name\":\"worldTwo\"}]}");
 
         List<JsonWorld> worldList = unitUnderTest.getWorldList(file);
@@ -73,5 +86,12 @@ public class JsonWorldsAdapterTest extends ClassTestCase<JsonWorldsAdapter> {
 
     private WorldEntity createWorldEntity(String name, String creationDate, int size, SyncTypeEnum syncType) {
         return new WorldEntity(name, DateUtils.parse(creationDate), size, syncType);
+    }
+
+    private void assertJsonObject(Map<String, String> expected, JSONObject actual, int index) {
+        final JSONArray worlds = ((JSONArray) actual.get("worlds"));
+        final String[] keyArray = expected.keySet().toArray(new String[expected.size()]);
+        String key = keyArray[index];
+        assertEquals(expected.get(key), ((JSONObject) worlds.get(index)).get(key).toString());
     }
 }
