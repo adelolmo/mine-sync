@@ -143,6 +143,7 @@
                             <alias>${sign.alias}</alias>
                             <storepass>${sign.storepass}</storepass>
                             <keypass>${sign.keypass}</keypass>
+                            <!--<providerClass>sun.security.pkcs11.SunPKCS11</providerClass>-->
                             <verbose>true</verbose>
                         </configuration>
                     </execution>
