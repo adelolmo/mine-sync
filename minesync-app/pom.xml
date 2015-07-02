@@ -143,8 +143,11 @@
                             <alias>${sign.alias}</alias>
                             <storepass>${sign.storepass}</storepass>
                             <keypass>${sign.keypass}</keypass>
-                            <!--<providerClass>sun.security.pkcs11.SunPKCS11</providerClass>-->
                             <verbose>true</verbose>
+                            <arguments>
+                                <argument>-sigalg</argument><argument>MD5withRSA</argument>
+                                <argument>-digestalg</argument><argument>SHA1</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                 </executions>
