@@ -25,14 +25,11 @@
 package org.ado.minesync.gui;
 
 import android.app.Activity;
-import android.util.Log;
 import com.dropbox.sync.android.DbxAccountManager;
 import org.ado.minesync.commons.ALog;
 import org.ado.minesync.config.AppConfiguration;
 import org.ado.minesync.dropbox.DropboxFileManager;
 import org.ado.minesync.minecraft.MinecraftData;
-
-import static org.ado.minesync.config.AppConstants.L;
 
 /**
  * Class description here.
@@ -53,8 +50,8 @@ public class MinecraftDropboxStatus {
     }
 
     public MinecraftDropboxStatusEnum getStatus() {
-        if(L) Log.i(TAG, "Initialize app... isDropboxEmpty [" + this.dropboxFileManager.isDropboxEmpty()
-                + "] isMinecraftEmpty [" + this.minecraftData.getWorlds().isEmpty() + "].");
+        ALog.i(TAG, "Initialize app... isDropboxEmpty [%s] isMinecraftEmpty [%s].",
+                this.dropboxFileManager.isDropboxEmpty(), this.minecraftData.getWorlds().isEmpty());
         if (!this.dropboxFileManager.isDropboxEmpty() && !this.minecraftData.getWorlds().isEmpty()) {
             return MinecraftDropboxStatusEnum.LOCAL_AND_DROPBOX;
 
