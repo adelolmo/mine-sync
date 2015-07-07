@@ -75,7 +75,7 @@ public class MineSyncMainActivity extends FragmentActivity implements ActionBar.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ALog.d(TAG, "onCreate. savedInstanceState [" + savedInstanceState + "].");
+        ALog.d(TAG, "onCreate. savedInstanceState [%s].", savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(getApplicationContext(), getSupportFragmentManager());
@@ -107,15 +107,15 @@ public class MineSyncMainActivity extends FragmentActivity implements ActionBar.
         upgradeManager.upgradeIfNeeded();
         startServicesIfNeeded();
 
-        ALog.d(TAG, "var configProcessActive [" + configProcessActive + "]");
+        ALog.d(TAG, "var configProcessActive [%s]", configProcessActive);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        ALog.d(TAG, "var configProcessActive [" + configProcessActive + "]");
+        ALog.d(TAG, "var configProcessActive [%s]", configProcessActive);
         configProcessActive = isConfigProcessActive(savedInstanceState);
-        ALog.d(TAG, "onRestoreInstanceState. savedInstanceState [" + savedInstanceState + "]");
+        ALog.d(TAG, "onRestoreInstanceState. savedInstanceState [%s]", savedInstanceState);
     }
 
     @Override
@@ -130,7 +130,7 @@ public class MineSyncMainActivity extends FragmentActivity implements ActionBar.
         super.onSaveInstanceState(outState);
         ALog.d(TAG, "onSaveInstanceState");
         outState.putBoolean("config_process_active", configProcessActive);
-        ALog.d(TAG, "outState saved [" + outState + "]");
+        ALog.d(TAG, "outState saved [%s]", outState);
     }
 
     @Override
@@ -150,7 +150,7 @@ public class MineSyncMainActivity extends FragmentActivity implements ActionBar.
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ALog.d(TAG, "onActivityResult - requestCode[" + requestCode + "] resultCode[" + resultCode + "] data[" + data + "].");
+        ALog.d(TAG, "onActivityResult - requestCode [%d] resultCode [%d] data [%s].", requestCode, resultCode, data);
         if (requestCode == REQUEST_LINK_TO_DBX) {
             processActivityResultDropboxLink(resultCode);
         } else if (requestCode == REQUEST_CONFIGURATION_FINISHED) {
@@ -196,7 +196,7 @@ public class MineSyncMainActivity extends FragmentActivity implements ActionBar.
 
     private void showConfigurationFinishedDialogIfNeeded() {
         boolean isNeeded = activityTracker.isShowConfigurationProcessFinishedDialogNeeded();
-        ALog.d(TAG, "isShowConfigurationProcessFinishedDialogNeeded? [" + isNeeded + "]");
+        ALog.d(TAG, "isShowConfigurationProcessFinishedDialogNeeded? [%s]", isNeeded);
         if (isNeeded) {
             showConfigurationFinishedDialog();
         }
@@ -259,7 +259,7 @@ public class MineSyncMainActivity extends FragmentActivity implements ActionBar.
     private void processActivityResultConfigurationFinishedIfNeeded(int resultCode, Intent data) {
         if (Activity.RESULT_OK == resultCode) {
             boolean isNeeded = activityTracker.isShowConfigurationProcessFinishedDialogNeeded();
-            ALog.d(TAG, "isShowConfigurationProcessFinishedDialogNeeded? [" + isNeeded + "]");
+            ALog.d(TAG, "isShowConfigurationProcessFinishedDialogNeeded? [%s]", isNeeded);
             if (isNeeded) {
                 showConfigurationFinishedDialog();
                 activityTracker.setNeedToShowConfigurationProcessFinishedDialog(false);

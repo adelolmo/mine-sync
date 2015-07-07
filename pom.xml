@@ -45,7 +45,7 @@
     <modules>
         <module>android-test-framework</module>
         <module>minesync-app</module>
-        <module>minesync-instrumentation</module>
+        <!--<module>minesync-instrumentation</module>-->
         <module>minesync-translation-tool</module>
     </modules>
 
@@ -138,6 +138,14 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>com.simpligility.maven.plugins</groupId>
                     <artifactId>android-maven-plugin</artifactId>
                     <version>${android.plugin.version}</version>
@@ -200,7 +208,7 @@
             </activation>
             <modules>
                 <module>minesync-app</module>
-                <module>minesync-instrumentation</module>
+                <!--<module>minesync-instrumentation</module>-->
             </modules>
         </profile>
         <profile>
