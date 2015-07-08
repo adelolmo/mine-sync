@@ -34,7 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sdk.platform.version>19</sdk.platform.version>
         <platform.version>5.0_r1</platform.version>
-        <android.plugin.version>4.2.1</android.plugin.version>
+        <android.plugin.version>4.3.0</android.plugin.version>
 
         <version.dropbox.sync>3.1.2</version.dropbox.sync>
         <version.support-v4>21.0.3</version.support-v4>

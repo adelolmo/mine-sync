@@ -15,7 +15,7 @@ run(){
 	$MVN versions:set -DnewVersion="$RELEASE_VERSION" &&
 	git commit -a -m "prepare to release v.$RELEASE_VERSION" &&
 	git push &&
-	$MVN clean install -Prelease &&
+	$MVN clean install -Prelease -Dandroid.release=true &&
 	$MVN versions:set -DnewVersion="$DEVELOPMENT_VERSION-SNAPSHOT" &&
 	git commit -a -m "prepare to develop v.$DEVELOPMENT_VERSION-SNAPSHOT" &&
 	git push &&
