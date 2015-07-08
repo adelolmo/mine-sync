@@ -20,6 +20,7 @@
 <resources>
 
     <style name="Theme.Minesync" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:textColorPrimary">#FFFFFF</item>
         <item name="android:actionBarItemBackground">@drawable/selectable_background_minesync</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Minesync</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Minesync</item>
