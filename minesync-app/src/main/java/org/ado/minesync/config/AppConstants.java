@@ -29,22 +29,10 @@ public class AppConstants {
     public static final boolean L = true;
 
     public static final String MINECRAFT_SYNC_SHARE_PREFERENCES_NAME = "MinecraftSync";
-    public static final String SHARE_PREFERENCES_LAST_SYNC_DATE = "lastSync";
-    public static final String SHARE_PREFERENCES_LAST_ACTIVITY_TYPE = "lastActivityType";
-    public static final String SHARE_PREFERENCES_LAST_ACTIVITY_TYPE_DOWNLOAD = "download";
-    public static final String SHARE_PREFERENCES_LAST_ACTIVITY_TYPE_UPLOAD = "upload";
-    public static final String SHARE_PREFERENCES_AFFECTED_WORLD = "affectedWorld";
-    public static final String SHARE_PREFERENCES_LAST_UPLOAD_DATE = "lastUploadDate";
-    public static final String SHARE_PREFERENCES_LAST_DOWNLOAD_DATE = "lastDownloadDate";
-    public static final String SHARE_PREFERENCES_CONFLICTED_WORLD = "conflictedWorld";
     public static final String SHARE_CONFIGURATION_PROCESS_FINISHED = "configFinished";
     public static final String NEED_TO_SHOW_CONFIGURATION_PROCESS_FINISHED_DIALOG = "showConfigFinishedDialog";
 
     public static final String MINECRAFT_APP_PACKAGE = "com.mojang.minecraftpe";
-
-    public static final String PROGRESS_BAR_TITLE = "progressBarTitle";
-    public static final String PROGRESS_BAR_MAX = "progressBarMax";
-    public static final String PROGRESS_BAR_PROGRESS = "progressBarProgress";
 
     public static final String INTENT_DROPBOX_ACCOUNT = "org.ado.minesync.DROPBOX_ACCOUNT";
     public static final String INTENT_FOREGROUND_APP = "org.ado.minesync.FOREGROUND_APP";
@@ -57,12 +45,9 @@ public class AppConstants {
     public static final String INTENT_PARAMETER_VALUE_LINKED = "linked";
     public static final String INTENT_PARAMETER_VALUE_UNLINKED = "unlinked";
 
-    public static final String INTENT_PARAMETER_CONFIGURATION_JUST_FINISHED = "config_just_ended";
-
     // Notifications
     public static final int NOTIFICATION_SYNC = 1;
     public static final int NOTIFICATION_CONFIGURATION = 2;
-    public static final String ORG_ADO_MINESYNC_UPLOADING_WORLD = "org.ado.minesync.uploading_world";
 
     public static final String WORLDS_JSON_FILENAME = ".worlds.json";
 }
