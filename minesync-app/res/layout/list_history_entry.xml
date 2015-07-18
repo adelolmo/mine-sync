@@ -26,7 +26,8 @@
             android:id="@+id/textViewWorldName"
             android:layout_gravity="left"
             android:layout_weight="1"
-            style="@android:style/TextAppearance.Holo.Large"/>
+            style="@android:style/TextAppearance.Holo.Large"
+            android:textColor="@android:color/black"/>
 
         <LinearLayout
             android:orientation="horizontal"

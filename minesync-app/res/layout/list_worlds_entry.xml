@@ -26,7 +26,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="World name"
             android:id="@+id/textViewWorldListWorldName"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textColor="@android:color/black"/>
 
         <LinearLayout
             android:orientation="horizontal"
